@@ -3,3 +3,13 @@
   margin:0 auto;
   padding: 20px 0;
 }
+
+.headshot {
+  width: 175px;
+  height: 175px;
+  border-radius: 150%;
+  -webkit-border-radius: 150%;
+  -moz-border-radius: 150%;
+  float: right;
+  display: inline-block;
+}
