@@ -1,0 +1,49 @@
+---
+layout: post
+title: Chat with Node.js
+---
+<p>A few weeks ago in class we built a basic chatroom application. We used a <strong>Ruby</strong> based server and <strong>JavaScript/AJAX</strong> was running on our client. Today I followed a <a href="http://socket.io/get-started/chat/">chatroom tutorial</a> using node.js as the server and client side.</p>
+<p>One immediate benefit, is that you're basically writing JavaScript the entire time, without switching between different languages. Using the <strong>socket.io</strong> node module a persistant connection is setup between the client and server. This is one advantage node.js has over the previous chat app built with Ruby/AJAX. Let's take a look at some of the code from the two different setups below.</p>
+
+<h6>AJAX Client side code</h6>
+{% highlight JavaScript %}
+setInterval(function() { //function that checks for new messages ever 2 seconds
+    ajaxRequest(
+      {'since': $('#since').val()}
+      )
+  }, 2000);
+{% endhighlight %}
+<p>Here we can see an additional function created simply to check for new messages every 2 seconds. This is a step we skip altogether in our node.js app.</p>
+
+<h6>Ruby Server side code</h6>
+{% highlight Ruby %}
+  if request.xhr? and params.has_key? "since"
+    return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
+  end
+{% endhighlight %}
+<p>If the Ruby server receives a new AJAX request with data in the 'since' variable, it retrieves all of the messages newer than the last posted message.</p>
+
+ <p>Node.js, using the socket.io module, updates instantly due to the persisent connection and event driven nature of the framework. When a user submits a chat from the client application, this triggers an event on the server, which in turn responds back to all connected clients and updates the page.</p>
+
+<h6>Node.js Client side code</h6>
+{% highlight JavaScript %}
+  $('form').submit(function(){ //when user submits chat message form
+    socket.emit('chat message', $('#m').val()); //a 'chat message' event is triggered with the message sent along as the parameter
+    return false; //disables the default behavior of this html form
+  });
+{% endhighlight %}
+
+<h6>Node.js Server side code</h6>
+{% highlight JavaScript %}
+  socket.on('chat message', function(msg){ //server waits for the 'chat message' event
+    io.emit('chat message', msg); //it responds to all the connected clients with the received message
+  });
+{% endhighlight %}
+
+<h6>Node.js Client side code</h6>
+{% highlight javascript %}
+socket.on('chat message', function(msg,name){ //client event is activated
+  $('#messages').append($('<li>').text(name + ": " + msg)); //using JQuery the message is added to the screen
+});
+{% endhighlight %}
+<p>Our Ruby/AJAX chatroom required periodic reloading of the chatroom data using timestamps as a reference to load new messages. Therefore there would always be a couple second delay. Since the node.js application is not constantly checking for new updates it puts less demand on the client and server.</p>
