@@ -1,0 +1,115 @@
+---
+---
+// variables
+$font-stack: 'Open Sans', sans-serif;
+$primary-color: #fff;
+$secondary-color: #93979e;
+$background-color: #26282d;
+$special-color: #ebcb8b;
+
+body {
+  background-color: $background-color;
+  font-family: $font-stack;
+  
+  header.site-header {
+    border-bottom: 3px dashed $secondary-color;
+    div.wrapper {
+      a.site-title {
+        color: $special-color;
+        font-weight: 600;
+      }
+      nav.site-nav {
+        a.menu-icon {
+
+        }
+        div.trigger {
+          a.page-link {
+            color: $special-color;
+          }
+        }
+      }
+    }
+  }
+  div.page-content {
+    div.wrapper {
+      div.post {
+        header.post-header {
+          h1.post-title {
+            color: $primary-color;
+            font-weight: normal;
+          }
+          p.post-meta {
+            color: lighten( $primary-color, 10% );
+            font-weight: 300;
+          }
+        }
+        article.post-content {
+          p {
+            color: $secondary-color;
+            line-height: 1.75em;
+            a {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+      div.home {
+        h1.page-heading {
+          color: $primary-color;
+        }
+        ul.post-list {
+          li {
+            .post-meta {
+              color: lighten( $primary-color, 10%);
+              font-weight: 300;
+            }
+            h2 {
+              a.post-link {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+        p.rss-subscribe {
+          color: $primary-color;
+          a {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+  footer.site-footer {
+    border-top: 3px dashed $secondary-color;
+    div.wrapper {
+      h2.footer-heading {
+        color: $primary-color;
+      }
+      div.footer-col-wrapper {
+        color: $primary-color;
+        a {
+          color: $special-color;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+.screenshot {
+  display: block;
+  margin:0 auto;
+  padding: 20px 0;
+}
+
+.headshot {
+  width: 175px;
+  height: 175px;
+  border-radius: 150%;
+  -webkit-border-radius: 150%;
+  -moz-border-radius: 150%;
+  float: right;
+  display: inline-block;
+}
