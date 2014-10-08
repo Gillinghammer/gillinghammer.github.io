@@ -44,11 +44,29 @@ body {
           }
         }
         article.post-content {
+          h2 {
+            a {
+              color: $primary-color;
+            }
+          }
           p {
             color: $secondary-color;
             line-height: 1.75em;
             a {
               color: $primary-color;
+            }
+          }
+          h4 {
+            color: $primary-color;
+          }
+          ul {
+            list-style: none;
+            li {
+              color: $secondary-color;
+              padding-bottom: 5px;
+              a {
+                color: $primary-color;
+              }
             }
           }
         }
@@ -101,7 +119,9 @@ body {
 .screenshot {
   display: block;
   margin:0 auto;
-  padding: 20px 0;
+  margin: 20px 0;
+  border: 3px solid lighten($secondary-color, 10%);
+
 }
 
 .headshot {
