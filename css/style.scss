@@ -42,14 +42,14 @@ body {
         }
       }
       div#experience {
-        padding-top: 20px;
+        padding: 20px 0;
+        ul {
+          padding: 0;
+          margin-left: 10px;
+        }
         img.logo {
           max-width: 550px;
           display: block;
-          &.background {
-            padding: 20px 240px 15px 20px;
-            background-color: $secondary-color;
-          }
         }
         .post-meta {
           display: block;
@@ -60,8 +60,24 @@ body {
         ul {
           padding: 20px 0;
         }
+        div#general_assembly {
+          visibility: hidden;
+          &.show {
+            visibility: visible;
+          }
+        }
+        div#haystack {
+          visibility: hidden;
+          &.show {
+            visibility: visible;
+          }
+        }
         div#tesla_motors {
           padding-top: 20px;
+          visibility: hidden;
+          &.show {
+            visibility: visible;
+          }
           div#tesla_logo {
             
             float: left;
@@ -70,6 +86,9 @@ body {
             padding-top: 20px;
             vertical-align: middle;
             float: left;
+            ul {
+              margin-left: 20px;
+            }
           }
         }
         div.clearfix {
@@ -78,30 +97,36 @@ body {
           clear: both;
         }
       }
-      div#skills {
-        padding-top: 20px;
-        float: left;
-          h2 {
-            color: $special-color;
-          }
-          ul {
-            padding: 0 10px 0 0;
-            margin: 0;
-          }
-          div.skills_col {
-            float: left;
-          }
-      }
-      div#elon_university {
-        padding: 20px 0 0 20px;
-        float: left;
-          h2 {
-            color: $special-color;
-          }
-          ul {
-            padding: 0;
-            margin: 0;
-          }
+      div#skills_and_education {
+        visibility: hidden;
+        &.show {
+          visibility: visible;
+        }
+        div#skills {
+          padding-top: 20px;
+          float: left;
+            h2 {
+              color: $special-color;
+            }
+            ul {
+              padding: 0 10px 0 0;
+              margin: 0;
+            }
+            div.skills_col {
+              float: left;
+            }
+        }
+        div#elon_university {
+          padding: 20px 0 0 20px;
+          float: left;
+            h2 {
+              color: $special-color;
+            }
+            ul {
+              padding: 0;
+              margin: 0;
+            }
+        }
       }
     }
 
