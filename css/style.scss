@@ -39,10 +39,10 @@ body {
         }
         h4 {
           color: $primary-color;
-          padding-bottom: 20px;
         }
       }
       div#experience {
+        padding-top: 20px;
         img.logo {
           max-width: 400px;
           display: block;
@@ -58,7 +58,7 @@ body {
           font-size: 1em;
         }
         ul {
-          padding-top: 20px;
+          padding: 20px 0;
         }
         div#tesla_motors {
           padding-top: 20px;
