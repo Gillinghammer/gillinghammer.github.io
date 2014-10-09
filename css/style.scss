@@ -156,7 +156,15 @@ body {
         div.col {
           float: left;
           div#gif {
-            padding-left: 40px;
+            padding-left: 60px;
+
+            img {
+              display: block;
+            }
+            .caption {
+              padding-top: 10px;
+              float: right;
+            }
           }
         }
         ul.post-list {
