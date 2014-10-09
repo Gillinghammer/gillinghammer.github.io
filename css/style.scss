@@ -32,27 +32,75 @@ body {
   }
   div.page-content {
     div#resume_cv {
+      min-width: 740px;
       div#headline {
         h2 {
           color: $special-color;
         }
         h4 {
           color: $primary-color;
+          padding-bottom: 20px;
         }
       }
       div#experience {
+        img.logo {
+          max-width: 400px;
+          display: block;
+          &.background {
+            padding: 20px 240px 15px 20px;
+            background-color: $secondary-color;
+          }
+        }
+        .post-meta {
+          display: block;
+          padding-top: 20px;
+          color: $primary-color;
+          font-size: 1em;
+        }
+        ul {
+          padding-top: 20px;
+        }
+        div#tesla_motors {
+          padding-top: 20px;
+          div#tesla_logo {
+            
+            float: left;
+          }
+          div#tesla_items {
+            padding-top: 20px;
+            vertical-align: middle;
+            float: left;
+          }
+        }
+        div.clearfix {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+      div#skills {
+        padding-top: 20px;
+        float: left;
           h2 {
             color: $special-color;
           }
-      }
-      div#skills {
-          h2 {
-            color: $special-color;
+          ul {
+            padding: 0 10px 0 0;
+            margin: 0;
+          }
+          div.skills_col {
+            float: left;
           }
       }
       div#elon_university {
+        padding: 20px 0 0 20px;
+        float: left;
           h2 {
             color: $special-color;
+          }
+          ul {
+            padding: 0;
+            margin: 0;
           }
       }
     }
