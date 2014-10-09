@@ -31,6 +31,32 @@ body {
     }
   }
   div.page-content {
+    div#resume_cv {
+      div#headline {
+        h2 {
+          color: $special-color;
+        }
+        h4 {
+          color: $primary-color;
+        }
+      }
+      div#experience {
+          h2 {
+            color: $special-color;
+          }
+      }
+      div#skills {
+          h2 {
+            color: $special-color;
+          }
+      }
+      div#elon_university {
+          h2 {
+            color: $special-color;
+          }
+      }
+    }
+
     div.wrapper {
       div.post {
         header.post-header {
