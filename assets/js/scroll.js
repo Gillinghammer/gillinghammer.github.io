@@ -13,7 +13,7 @@ $(window).scroll(function() {
     if (scroll >= 700) {
       $("#tesla_motors").addClass("animated fadeInRightBig show");
     }
-    if (scroll >= 1000) {
+    if (scroll >= 900) {
       $("#skills_and_education").addClass("animated zoomInDown show");
     }
 });
