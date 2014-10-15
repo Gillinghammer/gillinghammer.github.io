@@ -37,9 +37,6 @@ body {
         h2 {
           color: $special-color;
         }
-        h3 {
-          color: $primary-color;
-        }
         h4 {
           color: $primary-color;
         }
@@ -150,6 +147,10 @@ body {
             a {
               color: $primary-color;
             }
+
+          }
+          h3 {
+            color: $primary-color;
           }
           p {
             color: $secondary-color;
