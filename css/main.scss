@@ -3,7 +3,8 @@
 ---
 @charset "utf-8";
 
-
+@import "../bourbon/bourbon";
+@import "../css/devicons";
 
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
@@ -25,7 +26,6 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 
-
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {
@@ -39,11 +39,86 @@ $on-laptop:        800px;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
         "syntax-highlighting"
 ;
+
+p {
+  line-height: 1.75em;
+}
+
+div.col {
+  float: left;
+}
+
+div#gif {max-width: 400px; padding-left: 50px;}
+
+img.headshot {width: 250px;
+  height: 250px;
+  border-radius: 150%;
+  -webkit-border-radius: 150%;
+  -moz-border-radius: 150%;
+  float: left;
+  display: inline-block;}
+
+img.logo{
+  display:block;
+  &.GA {
+    background-color: #999;
+    padding: 5px;
+  }
+}
+
+div.aboutsection {
+  padding-top: 50px;
+  margin-left: 300px;
+  min-height: 200px;
+  line-height: 1.75em;
+}
+
+div#experience {
+  @include clearfix;
+  padding: 20px 0;
+}
+
+div#elon_university {
+  padding-left: 40px;
+  max-width: 350px;
+}
+
+span.CVdate {
+  display: block;
+  padding: 10px 0;
+}
+
+ul {
+  list-style: none;
+  li {
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1223px) {
+  div#badges {
+    max-width: 25%;
+    background-color: $grey-color-dark;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    .icon {
+      color: $grey-color-light;
+      display: block;
+      font-size: 7em;
+      padding: 0px 40px 20px 40px;
+    }
+  } 
+}
+@media (max-width: 1224px) {
+  div#badges {
+    display: none;
+  } 
+}

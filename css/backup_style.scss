@@ -1,5 +1,9 @@
 ---
 ---
+@import "../css/devicons";
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+
 // variables
 $font-stack: 'Open Sans', sans-serif;
 $primary-color: #fff;
@@ -30,6 +34,7 @@ body {
       }
     }
   }
+
   div.page-content {
     div#resume_cv {
       min-width: 740px;
@@ -61,22 +66,22 @@ body {
           padding: 20px 0;
         }
         div#general_assembly {
-          visibility: hidden;
+          //visibility: hidden;
           &.show {
-            visibility: visible;
+            //visibility: visible;
           }
         }
         div#haystack {
-          visibility: hidden;
+          //visibility: hidden;
           &.show {
-            visibility: visible;
+            //visibility: visible;
           }
         }
         div#tesla_motors {
           padding-top: 20px;
-          visibility: hidden;
+          //visibility: hidden;
           &.show {
-            visibility: visible;
+            //visibility: visible;
           }
           div#tesla_logo {
             
@@ -98,7 +103,7 @@ body {
         }
       }
       div#skills_and_education {
-        visibility: hidden;
+        //visibility: hidden;
         &.show {
           visibility: visible;
         }
