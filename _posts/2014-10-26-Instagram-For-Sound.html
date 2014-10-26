@@ -1,0 +1,26 @@
+---
+layout: post
+title: Earful, the Instagram For Sound
+---
+<p>
+  After 2 weeks of work, I'm happy to say that my final project for my class is finished. In my <a href="http://colin.gillingh.am/2014/10/09/Earful-The-Sound-Journal.html">post</a> I explained a bit about the project I was trying to create. The wireframes helped guide my development towards the final product you see today.
+</p>
+
+<!-- <img class="screenshot" src="{{ site.url }}/assets/earfulLogin.png">
+  <img class="screenshot" src="{{ site.url }}/assets/earfulMySounds.png"> -->
+  <div class="screenshots" style="text-align:center;padding-bottom:50px;">
+    <h2><a href="http://earfuljournal.herokuapp.com">Earful</a> (iPhone)</h2>
+    <img class="screenshot" src="/assets/earfulLogin.png" width="40%" style="display:inline;">
+    <img class="screenshot" src="/assets/earfulMySounds.png" width="40%" style="display:inline;padding-left:20px;">
+  </div>
+
+  <h3>Built with:</h3>
+  <ul>
+    <li>Server-side, Ruby on Rails</li>
+    <li>Client-side, Angular.js</li>
+    <li><a href="https://github.com/thoughtbot/griddler" target="_blank">Griddler</a>, convert emails to POST requests</li>
+  </ul>
+  <p>
+    This was my first big project using Angular on top of Ruby on Rails. I really like this approach. Rails makes it very easy to setup the logic while Angular handles all the user interactions and displaying the information. Using these two frameworks together allows you to build prototypes very quickly. I'm looking forward to working on my next project soon.
+  </p>
+  <p>I also used the ruby gem, Griddler, from the great team at <a href="http://thoughtbot.com/" target="_blank">Thoughtbot</a> on this project. Mobile browsers don't currently support accessing the phone's microphone, so I needed a work around to get my sounds added to the site. Using Griddler, I was able to send my recordings as attachments to my application. It uses the text in the subject line as the title of the post and the email body as the content.</p>
