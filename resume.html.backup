@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: page
 title: Hire Me
 permalink: /resume/
 ---
-
+ -->
 <div id="badges" class="animated fadeInUpBig">
   <div class="icon devicons devicons-javascript"></div>
   <div class="icon devicons devicons-angular"></div>
@@ -25,7 +25,7 @@ permalink: /resume/
 
 <div id="resume_cv" >
   <div id="headline">
-    <h2>Full Stack Web Developer and Entrepreneur</h2>
+    <h2>Full Stack Web Developer and Marketer</h2>
   </div>
   <div id="summary">
     <p>I’m a versatile full stack web developer with a marketing background from Tesla Motors. I'd like to join a small team solving big problems as a web developer or product manager.</p>
