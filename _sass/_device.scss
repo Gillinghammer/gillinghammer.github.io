@@ -37,8 +37,10 @@ $device-screen-image: 'http://colin.gillingh.am/assets/earfulMySounds.png';
   }
 
   p {
-    font-family: serif;
     margin-bottom: 1.5em;
+  }
+  button {
+    margin-bottom: 20px;
   }
 }
 
@@ -69,7 +71,7 @@ $device-screen-image: 'http://colin.gillingh.am/assets/earfulMySounds.png';
       7px 0px $device-backside-background,
       10px 0px $device-backside-background,
       13px 0px $device-backside-background;
-      z-index: 99999;
+      z-index: 100;
 
     .screen {
       @include size($device-screen-width $device-screen-height);

@@ -1,0 +1,18 @@
+<div class="blogposts">
+  <div class="section-heading"><h2>Latest Blog Posts</h2></div>
+  <div class="posts">
+    {% for post in site.posts limit:2 %}
+      <div class="post">
+        <div class="postDetail">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+      </div>
+    {% endfor %}
+    <div class="post">
+      <div class="postDetail">
+        <button>More Posts</button>
+      </div>
+    </div>
+  </div>
+</div>
