@@ -127,11 +127,7 @@ div.blogposts {
     div.post {
       @include span-columns(4);
       @include omega();
-      text-align: center;
-      display: table;
       div.postDetail {
-        display: table-cell;
-        vertical-align: middle;
         a {
           color: $heading-text;
           font-size: 1.5em;
@@ -254,7 +250,7 @@ div.blogposts div.posts div.post {
   @include media($mobile) {
     @include span-columns(4);
     @include omega();
-    padding: 0;
+    padding: 0 0 20px 0;
     margin: 0;
     text-align: left;
     span {
@@ -280,7 +276,7 @@ nav {
         padding-left: 10px;
         li {
           @include span-columns(2 of 4);
-          font-size: 1em;
+          font-size: 1.2em;
           @include omega();
           }
         }
