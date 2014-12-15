@@ -6,9 +6,9 @@
 @import "device";
 @import "browser";
 
-$mobile: new-breakpoint(max-width 974px 4);
+$mobile: new-breakpoint(min-width 320px max-width 889px, 4);
 
-$font-stack:    'helvetica neue', sans-serif;
+$font-stack: 'helvetica neue', sans-serif;
 $border-color: #2FBF71;
 $main-text: #333;
 $heading-text: #2FBF71;
@@ -61,6 +61,7 @@ nav {
 #menuClosed {
   @include span-columns(1);
   @include shift(10);
+  cursor: pointer;
   padding: 50px 0 0 0;
   i {
     font-size: 2em;
@@ -79,7 +80,6 @@ nav {
   }
   
 }
-
 
 ul {
   padding: 0;
@@ -185,27 +185,47 @@ div.home {
         padding: 10px 0;
       }
     }
-    div.placeholders {
-      @include outer-container;
-      div.gif {
-        @include span-columns(6);
-      }
-      div.gifInfo {
-        text-align: left;
-        position: relative;
-        top: 125px;
-        @include span-columns(5);
-        @include shift(1);
-        .caption {
-          line-height: 2em;
-          p {
-            padding: 10px 0 0 0;
-          }
-        }
-      }
-    }
   }
 }
+
+div#earful {
+  @include span-columns(10);
+  div.device-text {
+    text-align: right;
+    padding-right: 40px;
+    @include shift(1);
+    @include span-columns(4 of 10);
+    min-height: 400px;
+    button, p {
+      margin: 10px;
+    }
+  }
+  div.device {
+    @include span-columns(5 of 10);
+    max-width: 240px;
+    min-width: 240px;
+  }
+}
+
+div#placeholders {
+  @include span-columns(10);
+  div.gif {
+    @include span-columns(5 of 10);
+    width: 350px;
+    img {
+      border: 5px solid $main-text;
+    }
+  }
+  div.gifInfo {
+    padding-left: 40px;
+    @include span-columns(4 of 10);
+  }
+  button, p {
+    margin: 10px;
+  }
+}
+
+
 
 // Layouts/post CSS for Blogposts
 div.blogpost {
@@ -259,6 +279,40 @@ div.blogposts div.posts div.post {
   }
 }
 
+div#earful {
+  position: relative;
+  @include media($mobile) {
+    @include span-columns(4);
+    div.device-text {
+      text-align: center;
+      @include span-columns(4);
+      button, p {
+        margin: 10px 0;
+      }
+    }
+    div.device {
+      right: 50px;
+      max-width: 240px;
+      min-width: 240px;
+    }
+  } 
+}
+
+div#placeholders {
+  @include media($mobile) {
+    text-align: center;
+    padding-top: 150px;
+    @include span-columns(4);
+    div.gif {
+      @include span-columns(4);
+    }
+    div.gifInfo {
+      @include span-columns(4);
+      padding: 10px 0;
+    }
+  }
+}
+
 div.home h1#heading {
   @include media($mobile) {
     padding:0;
@@ -268,7 +322,7 @@ div.home h1#heading {
 }
 
 nav {
-    ul{
+  ul{
       // font-size: 0.75em;
       @include media($mobile) {
         @include span-columns(4);
@@ -277,8 +331,8 @@ nav {
           @include span-columns(2 of 4);
           font-size: 1.2em;
           @include omega();
-          }
         }
+      }
     }
     #menu {
       @include media($mobile) {
@@ -301,44 +355,14 @@ nav {
     }
   }
 
-ul#pageLinks {
-  @include media($mobile) {
-    @include span-columns(4);
-    padding-left: 10px;
-    li {
-
-      @include span-columns(2 of 4);
-      font-size: 1.5em;
-      @include omega();
-    }
-  }
-}
-
-div.projects .device-background, .placeholders {
-  @include media($mobile) {
-    display: none;
-  }
-}
-
-div.projects #earfulMobile, #placeholdersMobile {
-  display: none;
-  @include media($mobile) {
-    @include span-columns(4);
-    h4 {
-      padding: 20px 0;
-    }
-    img {
-      @include span-columns(2 of 4);
-      &.full {
-        @include span-columns(4);
-        padding-bottom: 20px;
+  ul#pageLinks {
+    @include media($mobile) {
+      @include span-columns(4);
+      padding-left: 10px;
+      li {
+        @include span-columns(2 of 4);
+        font-size: 1.5em;
+        @include omega();
       }
     }
-    p {
-      padding: 0 10px;
-    }
   }
-  button {
-    margin-bottom: 10px; 
-  }
-}
