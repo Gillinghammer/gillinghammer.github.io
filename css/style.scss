@@ -128,8 +128,6 @@ div.blogposts {
       @include span-columns(4);
       @include omega();
       text-align: center;
-      min-height: 130px;
-      padding: 10px;
       display: table;
       div.postDetail {
         display: table-cell;
