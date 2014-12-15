@@ -43,7 +43,7 @@ nav {
   background-color: $bg-color;
   padding: 10px;
   position: fixed;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 3px solid $border-color;
   -webkit-box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
   -moz-box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
   box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
@@ -131,13 +131,6 @@ div.blogposts {
       min-height: 130px;
       padding: 10px;
       display: table;
-      // &:hover {
-      //   transition: 0.4s;
-      //   background-color: darken($heading-text, 10%);
-      // }
-      // &:active {
-      //   background-color: darken($heading-text, 30%);
-      // }
       div.postDetail {
         display: table-cell;
         vertical-align: middle;
@@ -170,7 +163,7 @@ div.home {
     font-size: 5em;
     margin: 0;
     padding: 0 0 20px 0;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 3px solid $border-color;
   }
   div.welcome {
     p {
