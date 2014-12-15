@@ -143,6 +143,12 @@ div.blogposts {
           font-style: italic;
           font-size: 1em;
         }
+        button {
+          margin-left: 80px;
+          @include media($mobile) {
+            margin: 0;
+          }
+        }
       }
     }
   }
@@ -207,7 +213,6 @@ div.blogpost {
   @include span-columns(10);
   @include shift(1);
   padding: 100px 0 20px 0;
-
   h1 {
     color: $heading-text;
     padding-bottom: 10px;
@@ -225,12 +230,6 @@ div.blogpost {
     color: $highlight-color;
     font-style: italic;
     font-size: 1em;
-  }
-  @include media($mobile) {
-    @include outer-container(100%);
-    @include span-columns(4);
-    margin: 0;
-    padding: 0;
   }
 
 }
