@@ -1,7 +1,7 @@
-$device-padding-vertical: 3.5em;
+$device-padding-vertical: 2.5em;
 $device-padding-horizontal: 0.4em;
-$device-screen-width: 14em;
-$device-screen-height: 21.5em;
+$device-screen-width: 12em;
+$device-screen-height: 19em;
 $device-background: darken(gray, 40);
 $device-backside-background: darken($device-background, 10);
 $device-text-color: #333;
@@ -13,7 +13,6 @@ $device-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/sour
 $device-screen-image: 'http://colin.gillingh.am/assets/earfulMySounds.png';
 
 .device {
-
   @include transform(
     perspective(800px) 
     translateX(0px) 
@@ -22,8 +21,11 @@ $device-screen-image: 'http://colin.gillingh.am/assets/earfulMySounds.png';
     rotateX(0deg) 
     rotateY(-20deg) 
     rotateZ(-0deg));
-  margin-bottom: -12em;
-  margin-right: 5em;
+  // margin-bottom: -12em;
+  // margin-right: 5em;
+  // margin: 5em 15em -5em auto;
+  margin-top: 3em;
+  margin-left: -5em;
   padding: $device-padding-vertical 0;
   width: $device-screen-width + (2 * $device-padding-horizontal);
   border-radius: 2em;
@@ -34,7 +36,6 @@ $device-screen-image: 'http://colin.gillingh.am/assets/earfulMySounds.png';
   7px 0px $device-backside-background,
   10px 0px $device-backside-background,
   13px 0px $device-backside-background;
-  z-index: 100;
 
   .screen {
     @include size($device-screen-width $device-screen-height);

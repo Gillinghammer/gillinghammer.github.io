@@ -6,14 +6,31 @@
 @import "device";
 @import "browser";
 
-$mobile: new-breakpoint(min-width 320px max-width 889px, 4);
+$mobile: new-breakpoint(min-width 320px max-width 480px, 4);
+$tablet: new-breakpoint(min-width 481px max-width 1024px, 4);
+$hideIcons: new-breakpoint(min-width 481px max-width 1024px, 4);
 
 $font-stack: 'helvetica neue', sans-serif;
-$border-color: #2FBF71;
 $main-text: #333;
 $heading-text: #2FBF71;
+$border-color: $heading-text;
 $highlight-color: white;
 $bg-color: #F7F7F7;
+
+$visual-grid: true;
+$visual-grid-color: #E6F6FF;
+// $visual-grid-opacity: 0.4;
+
+
+// GLOBALS
+
+p {
+  padding: 0.25em;
+  line-height: 1.8em;
+  @include media($mobile) { 
+    font-size: 1.25em;
+  }      
+}
 
 .hide {
   visibility: hidden;
@@ -29,12 +46,11 @@ h2 {
   color: $heading-text;
 }
 
-button {
-  @include button(shiny, $heading-text);
-  min-height: 50px;
+a {
+  color: $main-text;
 }
 
-nav {
+nav#navigation {
   @include span-columns(12);
   margin: 0;
   top: 0;
@@ -47,10 +63,31 @@ nav {
   -webkit-box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
   -moz-box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
   box-shadow: 0 8px 16px -6px rgba(0,0,0,0.25);
-  ul {
+  ul#navLinks {
     @include span-columns(12);
     li {
+      @include omega();
       @include span-columns(2);
+      min-height: 40px;
+      padding: 10px 0px;
+      transition: 0.4s;
+      font-size: 1.5em;
+      text-align: center;
+      @include media($mobile) {
+        font-size: 0.75em;
+      }
+      @include media($tablet) {
+        font-size: 1em;
+      }
+      &:hover {
+        transition: 0.4s;
+        background-color: $heading-text;
+        color: $bg-color;
+      }
+      &:hover + a {
+        color: $bg-color;
+        // border-color: $bg-color;
+      }
     }
   }
   #menu {
@@ -78,33 +115,81 @@ nav {
       color: $heading-text;
     }
   }
-  
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  li {
-    cursor: pointer;
-    font-size: 1.5em;
-    display: inline;
-    margin: 0;
-    padding: 0;
-    min-height: 60px;
-    line-height: 60px;
-    text-align: center;
-    @include span-columns(3);
-    a, a:visited, i {
-      color: $main-text;
+div#home {
+  @include outer-container;
+  padding: 2em;
+  @include media($mobile) { 
+    padding: 1em;
+  }
+  div#intro {
+    h1 {
+      color: $heading-text;
+      font-size: 5em;
+      @include media($tablet) {
+        font-size: 3.2em;
+      }
+      @include media($mobile) {
+        font-size: 2.5em;
+      }
     }
   }
-  li:hover{
-    transition: 0.4s;
-    background-color: $border-color;
-    color: $highlight-color;
-    a,i {
-      transition: 0.4s;
-      color: $bg-color;
+  div#projects {
+    h2 {
+      color: $heading-text;
+      padding: 1em 0;
+    }
+    div.project {
+      div.description {
+       @include span-columns(6);
+       @include omega();
+       text-align: right;
+       h4, p, button {
+        @include shift(1);
+        @include span-columns(4 of 6);
+       }
+      }
+      div.showcase {
+        @include span-columns(6);
+      }
+    }
+    div#gifPlaceholders {
+      text-align: left;
+      p {
+        text-align: left;
+      }
+      h4 {
+        text-align: left;
+      }
+    }
+    @include media($mobile) { 
+      div.project {
+        div.description {
+         @include span-columns(4);
+         text-align: center;
+         h4, p {
+          margin: 0 auto;
+          width: 100%;
+         }
+        }
+        div.showcase {
+          @include span-columns(4);
+          div.device {
+            margin: 9em auto -5em auto;
+          }
+        }
+      }
+    }
+    @include media($tablet) { 
+      div.project {
+        div.showcase {
+          div.device {
+            margin-left: 0;
+            margin-top: 7.5em;
+          }
+        }
+      }
     }
   }
 }
@@ -154,79 +239,6 @@ div.blogposts {
   }
 }
 
-div.home {
-  @include span-columns(8);
-  @include shift(2);
-  padding: 50px 0 0 0;
-  h1#heading {
-    color: $heading-text;
-    font-size: 5em;
-    margin: 0;
-    padding: 0 0 20px 0;
-    border-bottom: 3px solid $border-color;
-  }
-  div.welcome {
-    p {
-      font-size: 1.1em;
-      margin: 20px 5px;
-      line-height: 2em;
-    }
-  }
-  div.contact {
-    @include outer-container;
-  }
-  div.projects  {
-    @include outer-container;
-    padding: 20px 0;
-
-    div.section-heading {
-      padding: 40px 0;
-      @include media($mobile) {
-        padding: 10px 0;
-      }
-    }
-  }
-}
-
-div#earful {
-  @include span-columns(10);
-  div.device-text {
-    text-align: right;
-    padding-right: 40px;
-    @include shift(1);
-    @include span-columns(4 of 10);
-    min-height: 400px;
-    button, p {
-      margin: 10px;
-    }
-  }
-  div.device {
-    @include span-columns(5 of 10);
-    max-width: 240px;
-    min-width: 240px;
-  }
-}
-
-div#placeholders {
-  @include span-columns(10);
-  div.gif {
-    @include span-columns(5 of 10);
-    width: 350px;
-    img {
-      border: 5px solid $main-text;
-    }
-  }
-  div.gifInfo {
-    padding-left: 40px;
-    @include span-columns(4 of 10);
-  }
-  button, p {
-    margin: 10px;
-  }
-}
-
-
-
 // Layouts/post CSS for Blogposts
 div.blogpost {
   @include outer-container(100%);
@@ -253,10 +265,9 @@ div.blogpost {
   }
 
 }
-
 // MEDIA QUERIES
 
-div.home, div.blogposts {
+div.blogposts {
   @include media($mobile) {
     @include outer-container(100%);
     @include span-columns(4);
@@ -279,52 +290,19 @@ div.blogposts div.posts div.post {
   }
 }
 
-div#earful {
-  position: relative;
-  @include media($mobile) {
-    @include span-columns(4);
-    div.device-text {
-      text-align: center;
-      @include span-columns(4);
-      button, p {
-        margin: 10px 0;
-      }
-    }
-    div.device {
-      right: 50px;
-      max-width: 240px;
-      min-width: 240px;
-    }
-  } 
-}
-
-div#placeholders {
-  @include media($mobile) {
-    text-align: center;
-    padding-top: 150px;
-    @include span-columns(4);
-    div.gif {
-      @include span-columns(4);
-    }
-    div.gifInfo {
-      @include span-columns(4);
-      padding: 10px 0;
-    }
-  }
-}
-
-div.home h1#heading {
-  @include media($mobile) {
-    padding:0;
-    margin:0;
-    font-size: 4em;
-  }
-}
-
-nav {
-  ul{
+nav#navigation {
+  ul#navLinks{
       // font-size: 0.75em;
       @include media($mobile) {
+        @include span-columns(4);
+        padding-left: 10px;
+        li {
+          @include span-columns(2 of 4);
+          font-size: 1.2em;
+          @include omega();
+        }
+      }
+      @include media($tablet) {
         @include span-columns(4);
         padding-left: 10px;
         li {
@@ -352,17 +330,22 @@ nav {
           color: $bg-color;
         }
       }
-    }
-  }
-
-  ul#pageLinks {
-    @include media($mobile) {
-      @include span-columns(4);
-      padding-left: 10px;
-      li {
-        @include span-columns(2 of 4);
-        font-size: 1.5em;
-        @include omega();
+      @include media($tablet) {
+        cursor: pointer;
+        position: relative;
+        bottom: -35px;
+        left: 45%;
+        text-align: center;
+        padding: 10px;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background-color: $heading-text;
+        border-radius: 150px;
+        i {
+          font-size: 1.75em;
+          color: $bg-color;
+        }
       }
     }
   }
