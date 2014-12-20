@@ -13,4 +13,13 @@ $(document).ready(function() {
       });
     });
 
+    $("#morePosts").click(function() {
+      $("#allBlogs").removeClass('hideBlogs');
+      $("#allBlogs").addClass('showBlogs');
+    });
+
+    $("#close").click(function(){
+      $("#allBlogs").removeClass('showBlogs');
+      $("#allBlogs").addClass('hideBlogs');
+    });
 });

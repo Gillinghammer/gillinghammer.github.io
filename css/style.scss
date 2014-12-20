@@ -55,7 +55,7 @@ a {
  button {
   margin-left: 0;
   // width: 200px;
- } 
+} 
 }
 
 nav#navigation {
@@ -170,50 +170,54 @@ div#home {
        h4, p, button {
         @include shift(1);
         @include span-columns(4 of 6);
-       }
-      }
-      div.showcase {
-        @include span-columns(6);
       }
     }
-    div#gifPlaceholders {
+    div.showcase {
+      @include span-columns(6);
+    }
+  }
+  div#gifPlaceholders {
+    text-align: left;
+    p {
       text-align: left;
-      p {
-        text-align: left;
-      }
-      h4 {
-        text-align: left;
+    }
+    h4 {
+      text-align: left;
+    }
+  }
+  @include media($mobile) { 
+    div.project {
+      padding: 20px 0;
+      div.description {
+       @include span-columns(4);
+       text-align: left;
+       h4, p {
+        margin: 0 auto;
+        width: 100%;
       }
     }
-    @include media($mobile) { 
-      div.project {
-        div.description {
-         @include span-columns(4);
-         text-align: left;
-         h4, p {
-          margin: 0 auto;
-          width: 100%;
-         }
-        }
-        div.showcase {
-          @include span-columns(4);
-          div.device {
-            margin: 9em auto -5em auto;
-          }
-        }
+    div.showcase {
+      @include span-columns(4);
+      div.device {
+        margin: 9em auto -5em auto;
       }
     }
-    @include media($tablet) { 
-      div.project {
-        div.showcase {
-          div.device {
-            margin-left: 0;
-            margin-top: 7.5em;
-          }
-        }
+    button {
+      margin: 10px;
+    }
+  }
+}
+@include media($tablet) { 
+  div.project {
+    div.showcase {
+      div.device {
+        margin-left: 0;
+        margin-top: 7.5em;
       }
     }
   }
+}
+}
 }
 
 div.blogposts {
@@ -285,7 +289,66 @@ div.blogpost {
     font-style: italic;
     font-size: 1em;
   }
+}
 
+div#allBlogs {
+  transition: 1s;
+  position: fixed;
+  right: -10000px;
+  top: 0;
+  bottom: 0;
+  @include linear-gradient(to top, darken($heading-text, 20%), $heading-text);
+  // background-color: $heading-text;
+  padding: 40px 0;
+  @include shift(7);
+  @include span-columns(5);
+  &.showBlogs {
+    right: 0;
+  }
+  &.hideBlogs {
+    right: -10000px;
+  }
+  div#close {
+    color: $bg-color;
+    cursor: pointer;
+    position: relative;
+    top: -15px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 2em;
+    // right: -10000px;
+    // transition: 1s;
+  }
+  div.blogLink {
+    h4, h3 {
+      color: $bg-color;
+      display: inline-block;
+      font-size: 1.25em;
+      font-weight: normal;
+      line-height: 2em;
+
+    }
+    h4 {
+      text-align: right;
+      @include span-columns(2 of 5);
+    }
+    h3 {
+      text-decoration: underline;
+      @include span-columns(3 of 5);
+    }
+  }
+  @include media($tablet) {
+    @include span-columns(4);
+ }
+ @include media($mobile) {
+  @include span-columns(4);
+  div.blogLink {
+    h3, h4 {
+      font-size: 1em;
+      line-height: 2em;
+    }
+  }
+}
 }
 // MEDIA QUERIES
 
