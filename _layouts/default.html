@@ -23,7 +23,7 @@
         {{ content }}
         {% include blogs.html %}
         <div id="allBlogs">
-          <div id="close">X</div>
+          <div id="close"><i class="fa fa-times-circle"></i></div>
           {% for post in site.posts %}
             <div class="blogLink">
               <h4>{{ post.date | date: "%b %-d, %Y" }}</h4>
