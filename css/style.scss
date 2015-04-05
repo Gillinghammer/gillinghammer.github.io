@@ -19,8 +19,18 @@
           border-radius: $radius;
 }
 
+@mixin circle {
+     width: 250px;
+     height: 250px;
+     border-radius: 100%;
+}
+
 
 $hoverDark: #0095DB;
+
+// @media screen and (max-width: 768) {
+
+//   }
 
 ul.nav-justified {
   padding: 20px 0;
@@ -136,26 +146,64 @@ body {
   }
 }
 
-nav.animateIt {
-    position:fixed;
-    top:-100px;
-    left: 0;
-    right: 0;
-    z-index:999;
-    transition:0.4s top cubic-bezier(.3, .73, .3, .74);
-    font-size: 10px;
-    background-color: rgba(255,255,255,0.75);
-    box-shadow: 0 4px 10px -2px rgba(0,0,0,0.5);
-    ul {
-      padding: 0;
-      margin: 0;
-      li {
-        a {
-          color: #002435 !important;
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  nav.animateIt {
+      display: block;
+      position:fixed;
+      top:-315px;
+      left: 0;
+      right: 0;
+      z-index:999;
+      transition:0.4s top cubic-bezier(.3, .73, .3, .74);
+      font-size: 10px;
+      background-color: rgba(255,255,255,0.75);
+      box-shadow: 0 4px 10px -2px rgba(0,0,0,0.5);
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          a {
+            color: #002435 !important;
+          }
         }
       }
-    }
+  }
+  body.down nav.animateIt {
+      top: 0;
+  }
 }
-body.down nav.animateIt {
-    top:0;
+
+@media (min-width: 768px) {
+  nav.animateIt {
+      position:fixed;
+      top:-100px;
+      left: 0;
+      right: 0;
+      z-index:999;
+      transition:0.4s top cubic-bezier(.3, .73, .3, .74);
+      font-size: 10px;
+      background-color: rgba(255,255,255,0.75);
+      box-shadow: 0 4px 10px -2px rgba(0,0,0,0.5);
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          a {
+            color: #002435 !important;
+          }
+        }
+      }
+  }
+  body.down nav.animateIt {
+      top:0;
+  }
+}
+
+
+
+div#blogs {
+  padding-bottom: 20px;
 }

@@ -1,21 +1,30 @@
 ---
 layout: default
 ---
-
-<div id="portfolio" class="col-xs-12">
-  <div id="controls" class="col-xs-12 text-center ">
-
-    <div class="button-set">
-      <button id="previous">Previous</button>
-      <button id="next">Next</button>
-    </div>  
+<div class="col-xs-12">
+  <h3>Recent Posts:</h3>
+  <div id="blogs" class="col-xs-12 blog-carousel">
+    {% for post in site.posts %}
+    <div class="col-xs-12 blog-title"><a href="{{ post.url }}"><h2><i class="fa fa-bolt"></i> {{ post.title }}</h2></a></div>
+    {% endfor %}
   </div>
-  <div id="projects" class="row col-xs-8 col-xs-offset-2 carousel">
-    
-    <div class="project">
+</div>
+<div class="col-xs-12">
+  <h3>Recent Projects:</h3>
+  <div id="portfolio" class="col-xs-12">
+    <div id="controls" class="col-xs-12">
 
-      <div class="col-xs-12">
-        <h2>Earful, Instagram For Sound</h2>
+      <div class="button-set">
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+      </div>  
+    </div>
+    <div id="projects" class="row col-xs-12 carousel">
+
+      <div class="project">
+
+        <div class="col-xs-12">
+          <h2>Earful, Instagram For Sound</h2>
           <ul>
             <li>Server-side, Ruby on Rails</li>
             <li>Client-side, Angular.js</li>
@@ -25,62 +34,63 @@ layout: default
             This was my first big project using Angular on top of Ruby on Rails. I really like this approach. Rails makes it very easy to setup the logic while Angular handles all the user interactions and displaying the information. Using these two frameworks together allows you to build prototypes very quickly. I'm looking forward to working on my next project soon.
           </p>
           <p>I also used the ruby gem, Griddler, from the great team at <a href="http://thoughtbot.com/" target="_blank">Thoughtbot</a> on this project. Mobile browsers don't currently support accessing the phone's microphone, so I needed a work around to get my sounds added to the site. Using Griddler, I was able to send my recordings as attachments to my application. It uses the text in the subject line as the title of the post and the email body as the content.</p>
+        </div>
+
+        <div class="col-xs-6">
+          <img src="assets/earfulLogin.png" class="img-responsive">
+        </div>
+        <div class="col-xs-6">
+          <img src="assets/earfulMySounds.png" class="img-responsive">
+        </div>
+
       </div>
 
-      <div class="col-xs-6">
-        <img src="assets/earfulLogin.png" class="img-responsive">
-      </div>
-      <div class="col-xs-6">
-        <img src="assets/earfulMySounds.png" class="img-responsive">
+      <div class="project">
+
+        <div class="col-xs-12">
+          <h2>JobTweets</h2>
+          <ul>
+            <li>NodeJs Twitter Search Enginer</li>
+            <li>Query Developer Roles in different Locations</li>
+            <li>Bootstrap</li>
+            <li><a href="https://afternoon-garden-4641.herokuapp.com/" target="_blank">DEMO</a></li>
+          </ul>
+          <p>
+            I decided to build a simple search tool to help me find developer roles in different markets. Learning Node.js was something I wanted to do to improve my skillset, so building this app was a worthwhile experiment.
+          </p>
+          <p>The design is responsive to all devices using Bootrap CSS.</p>
+        </div>
+        <div class="col-xs-12">
+          <img src="assets/jobtweets.png" class="img-responsive">
+        </div>
       </div>
 
-    </div>
-        
-    <div class="project">
-
-      <div class="col-xs-12">
-        <h2>JobTweets</h2>
-                  <ul>
-                    <li>NodeJs Twitter Search Enginer</li>
-                    <li>Query Developer Roles in different Locations</li>
-                    <li>Bootstrap</li>
-                    <li><a href="https://afternoon-garden-4641.herokuapp.com/" target="_blank">DEMO</a></li>
-                  </ul>
-                  <p>
-                    I decided to build a simple search tool to help me find developer roles in different markets. Learning Node.js was something I wanted to do to improve my skillset, so building this app was a worthwhile experiment.
-                  </p>
-                  <p>The design is responsive to all devices using Bootrap CSS.</p>
-      </div>
-      <div class="col-xs-12">
-        <img src="assets/jobtweets.png" class="img-responsive">
-      </div>
-    </div>
-
-    <div class="project">
+      <div class="project">
 
         <div class="col-xs-12">
           <h2>IoT Hack, Weather and Stock Report</h2>
-            <ul>
-              <li>LIFX smart light</li>
-              <li>YahooFinance and WeatherBoy Gems</li>
-            </ul>
-            <p>
-              Relies on the following gems require 'lifx' # libraries to connect to your lifx bulb require 'yahoofinance' # stock quote api require 'weatherboy' # provides weather api require 'mactts' # gives access to osx command 'say' to allow voice ability.</p>
+          <ul>
+            <li>LIFX smart light</li>
+            <li>YahooFinance and WeatherBoy Gems</li>
+          </ul>
+          <p>
+            Relies on the following gems require 'lifx' # libraries to connect to your lifx bulb require 'yahoofinance' # stock quote api require 'weatherboy' # provides weather api require 'mactts' # gives access to osx command 'say' to allow voice ability.</p>
 
             <p>
               Anyone with a LIFX smartbulb can run this script to turn their LIFX into a stock ticker. Red for bad days, Green for good and Blue for flat. The 'mactts' gem gives access to your macs' 'say' command, so be prepared for it to read aloud the weather and individual stock information.</p>
 
-            <p>
-              Take a look at the very simple main.rb file to update with your location and list of stocks to follow.
-            </p>
+              <p>
+                Take a look at the very simple main.rb file to update with your location and list of stocks to follow.
+              </p>
 
 
-        </div>
-        <div class="col-xs-12 embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/SSQwXWv1oR0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-xs-12 embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/SSQwXWv1oR0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
         </div>
       </div>
-
     </div>
   </div>
-</div>
