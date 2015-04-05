@@ -11,6 +11,7 @@ $(document).ready(function() {
   $('.blog-carousel').slick({
   infinite: true,
   speed: 2500,
+  swipe: false,
   autoplay: true,
   slidesToShow: 1,
   arrows: false
@@ -24,6 +25,7 @@ $(document).ready(function() {
     autoplay: false,
     cssEase: 'ease',
     arrows: false,
+    swipe: false,
     draggable: false
   });
 
