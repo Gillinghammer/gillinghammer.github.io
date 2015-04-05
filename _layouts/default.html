@@ -6,23 +6,16 @@
   <body>
 
     <!-- {% include header.html %} -->
-    <div class="page-content">
+    <div class="page-content container">
       <div class="wrapper">
-        <nav id="navigation" class="hide">
-          <ul id="navLinks">
-            <a href="/" class="homeLink"><li><strong>CG</strong></li></a>
+        <nav id="navigation">
+          <ul id="navLinks" class="nav-justified">
             {% include links.html %}
           </ul>
-          <div id="menu">
-            <i class="fa fa-arrow-circle-up"></i>
-          </div>
         </nav>
-        <div id="menuClosed" >
-          <i class="fa fa-align-justify"></i>
-        </div>
         {{ content }}
-        {% include blogs.html %}
-        <div id="allBlogs">
+        <!-- {% include blogs.html %} -->
+        <!-- <div id="allBlogs">
           <div id="close"><i class="fa fa-times-circle"></i></div>
           {% for post in site.posts %}
             <div class="blogLink">
@@ -32,7 +25,7 @@
                 </a>
             </div>
           {% endfor %}
-        </div>
+        </div> -->
       </div>
     </div>
     {% include footer.html %}

@@ -1,25 +1,27 @@
 $(document).ready(function() {
 
-    $( "#menu" ).click(function() {
-      $( '#navigation' ).slideUp("fast", function() {
-        $('#menuClosed').removeClass('hide');
+  // Nav slide down to fixed element
+  $("nav").before($("nav").clone().addClass("animateIt"));
+      $(window).on("scroll", function () {
+          $("body").toggleClass("down", ($(window).scrollTop() > 100));
       });
-    });
 
-    $( "#menuClosed" ).click(function() {
-      $( '#navigation' ).slideDown("fast", function() {
-        $('#menuClosed').addClass('hide');
-        $('#navigation').removeClass('hide');
-      });
-    });
 
-    $("#morePosts").click(function() {
-      $("#allBlogs").removeClass('hideBlogs');
-      $("#allBlogs").addClass('showBlogs');
-    });
+  // Carousel settings
+  $('.carousel').slick({
+    speed: 2500,
+    adaptiveHeight: false,
+    autoplay: false,
+    cssEase: 'ease',
+    arrows: false,
+    draggable: false
+  });
 
-    $("#close").click(function(){
-      $("#allBlogs").removeClass('showBlogs');
-      $("#allBlogs").addClass('hideBlogs');
-    });
+  $('#previous').click(function(){
+    $('.carousel').slick('slickPrev');
+  });
+  $('#next').click(function(){
+    $('.carousel').slick('slickNext');
+  });
+
 });

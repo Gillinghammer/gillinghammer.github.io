@@ -1,13 +1,13 @@
 # Site settings
-timezone: Europe/London
+timezone: America/Los_Angeles
 title: Colin Gillingham
 email: colingillingham@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A collection of thoughts by Colin Gillingham. Focusing on startup ideas, innovation and other cool things learned while traveling.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://gillinghammer.github.io" # the base hostname & protocol for your site
-twitter_username: gillinghammer
-github_username:  gillinghammer
+twitter_username: Gillinghammer
+github_username:  Gillinghammer
 highlights: pygments
 # Build settings
 markdown: kramdown

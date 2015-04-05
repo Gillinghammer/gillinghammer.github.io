@@ -2,67 +2,85 @@
 layout: default
 ---
 
-<div id="home">
+<div id="portfolio" class="col-xs-12">
+  <div id="controls" class="col-xs-12 text-center ">
 
-  <div id="intro">
-    <h1>Colin Gillingham</h1>
-    <p>
-      <strong>Hey there!</strong> I'm a full stack web developer from Wisconsin living in Northern California. In a former life I worked in sales and marketing at Tesla Motors. When I'm not behind the laptop, I can be found trekking the globe.
-    </p>
-    <p>
-      If you're looking for web developers or have a project you think I could help with, shoot me an <a href="mailto:colin@gillingh.am">email</a>!
-    </p>
+    <div class="button-set">
+      <button id="previous">Previous</button>
+      <button id="next">Next</button>
+    </div>  
   </div>
-
-  <div id="projects">
-    <h2>Web Projects</h2>
+  <div id="projects" class="row col-xs-8 col-xs-offset-2 carousel">
+    
     <div class="project">
-      <div class="description">
-        <h4>Earful for iPhone</h4>
-        <p>
-          The Instagram for sound. Share sound files from your travels and follow your friends.
-        </p>
-        <a href="/2014/10/26/Instagram-For-Sound.html"><button>Learn More</button></a>
-        <p>
-          #Angular #Javascript #Rails #Sass
-        </p>
+
+      <div class="col-xs-12">
+        <h2>Earful, Instagram For Sound</h2>
+          <ul>
+            <li>Server-side, Ruby on Rails</li>
+            <li>Client-side, Angular.js</li>
+            <li><a href="https://github.com/thoughtbot/griddler" target="_blank">Griddler</a>, convert emails to POST requests</li>
+          </ul>
+          <p>
+            This was my first big project using Angular on top of Ruby on Rails. I really like this approach. Rails makes it very easy to setup the logic while Angular handles all the user interactions and displaying the information. Using these two frameworks together allows you to build prototypes very quickly. I'm looking forward to working on my next project soon.
+          </p>
+          <p>I also used the ruby gem, Griddler, from the great team at <a href="http://thoughtbot.com/" target="_blank">Thoughtbot</a> on this project. Mobile browsers don't currently support accessing the phone's microphone, so I needed a work around to get my sounds added to the site. Using Griddler, I was able to send my recordings as attachments to my application. It uses the text in the subject line as the title of the post and the email body as the content.</p>
       </div>
-      <div class="showcase">
-        <div class="device">
-          <div class="screen"></div>
+
+      <div class="col-xs-6">
+        <img src="assets/earfulLogin.png" class="img-responsive">
+      </div>
+      <div class="col-xs-6">
+        <img src="assets/earfulMySounds.png" class="img-responsive">
+      </div>
+
+    </div>
+        
+    <div class="project">
+
+      <div class="col-xs-12">
+        <h2>JobTweets</h2>
+                  <ul>
+                    <li>NodeJs Twitter Search Enginer</li>
+                    <li>Query Developer Roles in different Locations</li>
+                    <li>Bootstrap</li>
+                    <li><a href="https://afternoon-garden-4641.herokuapp.com/" target="_blank">DEMO</a></li>
+                  </ul>
+                  <p>
+                    I decided to build a simple search tool to help me find developer roles in different markets. Learning Node.js was something I wanted to do to improve my skillset, so building this app was a worthwhile experiment.
+                  </p>
+                  <p>The design is responsive to all devices using Bootrap CSS.</p>
+      </div>
+      <div class="col-xs-12">
+        <img src="assets/jobtweets.png" class="img-responsive">
+      </div>
+    </div>
+
+    <div class="project">
+
+        <div class="col-xs-12">
+          <h2>IoT Hack, Weather and Stock Report</h2>
+            <ul>
+              <li>LIFX smart light</li>
+              <li>YahooFinance and WeatherBoy Gems</li>
+            </ul>
+            <p>
+              Relies on the following gems require 'lifx' # libraries to connect to your lifx bulb require 'yahoofinance' # stock quote api require 'weatherboy' # provides weather api require 'mactts' # gives access to osx command 'say' to allow voice ability.</p>
+
+            <p>
+              Anyone with a LIFX smartbulb can run this script to turn their LIFX into a stock ticker. Red for bad days, Green for good and Blue for flat. The 'mactts' gem gives access to your macs' 'say' command, so be prepared for it to read aloud the weather and individual stock information.</p>
+
+            <p>
+              Take a look at the very simple main.rb file to update with your location and list of stocks to follow.
+            </p>
+
+
+        </div>
+        <div class="col-xs-12 embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/SSQwXWv1oR0" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
 
-    <div class="project" id="gifPlaceholders">
-      <div class="showcase">
-        <img src="http://media4.giphy.com/media/32GtkRUGVB1ug/giphy.gif">
-      </div>
-      <div class="description">
-        <h4>GIF Placeholders</h4>
-        <p>
-          I created this during a 24 hour Hackathon. Now you can generate GIFs of a specific width and height for your next design project!</p>
-        <a href="http://www.gillingh.am/GifPlaceholders/" target="_blank"><button>Visit Site</button></a>
-        <p>
-          #JavaScript #HTML #CSS
-        </p>
-      </div>
-    </div>
-
-    <div class="project" id="gifPlaceholders">
-      <div class="description">
-        <h4>Feed-Me: RSS Feed Reader</h4>
-        <p>
-          Feed-Me was a small team project built with Ruby on Rails styled with Sass. The goal was keeping the design minimal to avoid distracting from the RSS feeds.</p>
-        <a href="feed-me-rss.heroku.com" target="_blank"><button>Visit Site</button></a>
-        <p>
-          #jQuery #AJAX #RoR #HTML #Sass
-        </p>
-      </div>
-      <div class="showcase">
-        <img src="/assets/feedme.jpg">
-      </div>
     </div>
   </div>
-
 </div>
