@@ -25,11 +25,35 @@
      border-radius: 100%;
 }
 
+// Dark Blue Theme
 $lightBg: #003249;
 $darkBg:  #002130;
-$hover: #0095DB;
-$link: #00AEFF;
+$hover: #00AEFF;
+$link: #0095DB;
 
+// Dark Red Theme
+// $lightBg: #490000;
+// $darkBg:  #300000;
+// $hover: #DB0000;
+// $link: #FF0000;
+
+// Dark Purple Theme
+// $lightBg: #390049;
+// $darkBg:  #2B0030;
+// $hover: #8E00DB;
+// $link: #9000FF;
+
+// Dark Green Theme
+// $lightBg: #004911;
+// $darkBg:  #003016;
+// $hover: #00DB15;
+// $link: #65FF00;
+
+// Barf Theme
+// $lightBg: #493200;
+// $darkBg:  #293000;
+// $hover: #DBAB00;
+// $link: #FF9400;
 
 ul.nav-justified {
   padding: 20px 0;
