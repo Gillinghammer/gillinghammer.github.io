@@ -1,19 +1,54 @@
 ---
 ---
 
-@font-face {
-font-family: Bariol;
-src: url("/fonts/Bariol_Regular.otf");
-}
-
 @import url(http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700);
+
+$main-green: rgba(40,219,161,1);
+$sub-green: rgba(40,219,161,0.5);
+$off-white: #FFFAFF;
 
 * {
   font-family: Rajdhani;
 }
 
 body {
-  padding: 2em 0 0 0;
+  background-color: $off-white;
+  color: #303036;
+  a {
+    color: $main-green;
+    text-decoration: none;
+    border-bottom: 1px dotted $sub-green;
+    transition: 0.5s;
+    &:visited {
+      transition: 0.5s;
+      color: $main-green;
+    }
+    &:hover {
+      transition: 0.5s;
+      color: #00A896
+    }
+    &:active {
+      transition: 0.5s;
+      color: #02C39A
+    }
+  }
+  #alertbar {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(48,188,237,0.9);
+    span {
+      font-family: helvetica;
+      padding: 0.5em;
+      display: block;
+      text-align: center;
+      color: $off-white;
+      font-size: 1.25em;
+    }
+    &.invisible {
+      visibility: hidden;
+    }
+  }
 }
 
 .center-me {
@@ -23,60 +58,108 @@ body {
 
 .circle-img {
 border-radius: 150%;
-border: 5px solid transparent;
-background: #eee;
+border: 5px solid #ddd;
+transition: 1s;
+&.darken {
+  transition: 1s;
+  border-color: $main-green;
+}
+&.avatar {
+  border-color: rgba(0,0,0,0.25);
+}
 }
 
 #panel {
   div.referral {
-    min-height: 350px;
+    min-height: 400px;
     transition: 0.5s;
-    padding: 2em;
+    padding: 3.25em;
     background-color: none;
-    color: #333;
     font-weight: 300;
     p {
+      transition: 1s;
       font-size: 1.3em;
       line-height: 2em;
+      span {
+        color: $main-green;
+      }
     }
     img {
-      max-width: 100px;
+      max-width: 110px;
       cursor: pointer;
     }
   }
 }
 
-#about {
-  color: #00A896;
-  h1 {
-    font-weight: 700;
-  }
-  #avatar {
-    max-width: 120px;
-  }
-  p {
-    padding: 0 2em;
-  }
-  a {
-    color: #05668D;
-    &:visited {
-      color: #05668D;
+.profile {
+  background-color: #303036;
+  border-right: 10px solid rgba(0,0,0,0.25);
+  #profile {
+    min-height: 100%;
+    padding: 2.8em 0;
+    h1 {
+      font-weight: 700;
+      color: $main-green;
     }
-    &:hover {
-      color: #00A896
+    #avatar {
+      max-width: 110px;
     }
-    &:active {
-      color: #02C39A
+    p {
+      padding: 0 2em;
+      color: $off-white;
+    }
+    .links {
+      ul, li {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        padding-top: 2em;
+      }
+      li {
+        padding: 1em 0;
+        font-size: 1.25em;
+        a {
+          color: $off-white;
+          border: none;
+          &:hover {
+            color: $main-green;
+          }
+        }
+      }
     }
   }
 }
-
-
 .pure-g > div {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+}
+
+// media query hacks
+@media screen and (max-width: 1023px) {
+  #panel {
+    div.referral {
+      min-height: 275px;
+      padding: 1em 2em 0em 2em;
     }
-    .outline-box {
-        border: 1px solid black;
+  }
+    .profile {
+        border-right: none;
+        border-bottom: 10px solid rgba(0,0,0,0.25);
     }
+    .links {
+      a, li {
+        display: inline;
+      }
+      a {
+        font-size: 0.8em;
+        font-weight: 300;
+      }
+      .iconlinks {
+        a {
+          padding-right: 1em;
+        }
+      }
+    }
+}
