@@ -52,17 +52,23 @@ loadPhotosPanel = function(feed) {
   $('#photos').removeClass("hidden");
   console.log("loading")
   $.each(feed, function( index, value ) {
-    img_url = value.images.standard_resolution.url;
-    start_div = "<div class='pure-u-1 item'>"
-    img_string = "<img src='" + img_url + "' class='instagram_img'/>";
-    caption_string = "<p class='caption center-me'>" + value.caption.text + "</p>"
-    end_div = "</div>"
-    $(".instagram").append(start_div + img_string + caption_string + end_div);
+    start_img_div = "<div class='pure-u-1 pure-u-md-15-24 instagram_img'>"
+    img_string = "<img src='" + value.images.standard_resolution.url + "'/>";
+    end_img_div = "</div>"
+    date_formated = value.created_time
+    value.location.name == undefined ? location_string = "" : location_string = "<i class='fa fa-map-marker'></i> " + value.location.name
+    location_formated = "<h2>" + location_string + "</h2>"
+    start_caption_div = "<div class='pure-u-1 pure-u-md-9-24 caption'>"
+    date_string = "<date>" + date_formated + "</date>"
+    caption_string = "<p>" + value.caption.text + "</p>"
+    end_caption_div = "</div>"
+    $("#photos").append(start_caption_div + location_formated + caption_string + end_caption_div + start_img_div + img_string + end_img_div);
   });
 }
 closePhotosPanel = function() {$('#photos').addClass("hidden")}
 
 loadInstafeed = function() {
+  console.log("loading instafeed")
   var feed = {}
   $('.instagram').instagram({
     clientId: '10de702ffab441f89ec21f2224d93b62',
@@ -73,7 +79,7 @@ loadInstafeed = function() {
     userId: 1988146
   });
   $('.instagram').on('didLoadInstagram', function(event, response) {
-      console.log("instgram authenticated")
+      console.log("instgram authenticated", response.data)
       feed = response.data;
       loadPhotosPanel(feed);
   });
