@@ -4,28 +4,14 @@
   {% include head.html %}
 
   <body>
-
     <!-- {% include header.html %} -->
-    <div class="page-content container">
+    <div class="page-content">
+      <div id="alertbar" class="invisible animated">
+        <span></span>
+      </div>
       <div class="wrapper">
-        <nav id="navigation">
-          <ul id="navLinks" class="nav-justified">
-            {% include links.html %}
-          </ul>
-        </nav>
         {{ content }}
         <!-- {% include blogs.html %} -->
-        <!-- <div id="allBlogs">
-          <div id="close"><i class="fa fa-times-circle"></i></div>
-          {% for post in site.posts %}
-            <div class="blogLink">
-              <h4>{{ post.date | date: "%b %-d, %Y" }}</h4>
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                  <h3>{{ post.title }}</h3>
-                </a>
-            </div>
-          {% endfor %}
-        </div> -->
       </div>
     </div>
     {% include footer.html %}
@@ -37,19 +23,7 @@
 
       ga('create', 'UA-55438185-1', 'auto');
       ga('send', 'pageview');
-
     </script>
-
-    <script src='/assets/js/scrollReveal.min.js'></script>
-        <script>
-
-        config = { reset: true,
-                    mobile: false
-                 }
-
-          window.sr = new scrollReveal();
-
-        </script>
   </body>
 
 </html>
