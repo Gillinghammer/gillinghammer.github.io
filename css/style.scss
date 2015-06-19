@@ -66,6 +66,7 @@ transition: 1s;
 }
 &.avatar {
   border-color: rgba(0,0,0,0.25);
+  cursor: pointer;
 }
 }
 
@@ -105,6 +106,7 @@ transition: 1s;
       max-width: 110px;
     }
     p {
+      line-height: 1.75em;
       padding: 0 2em;
       color: $off-white;
     }
@@ -119,6 +121,7 @@ transition: 1s;
       li {
         padding: 1em 0;
         font-size: 1.25em;
+        font-weight: 300;
         a {
           color: $off-white;
           border: none;
@@ -134,6 +137,41 @@ transition: 1s;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+}
+
+#home {
+  padding: 2em 3em;
+  h1 {
+    font-size: 4.5em;
+    span {
+      font-size: 0.35em;
+      font-weight: 300;
+      color: $main-green;
+    }
+  }
+  p {
+    font-size: 2.5em;
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+#photos {
+  .instagram {
+    padding: 1em 0;
+    .item {
+      padding: 1em 0;
+      img {
+        max-width: 450px;
+      }
+      .caption {
+        max-width: 450px;
+        font-size: 1.5em;
+        padding: 0.5em;
+      }
+    }
+  }
 }
 
 // media query hacks
