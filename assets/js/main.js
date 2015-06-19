@@ -53,7 +53,7 @@ loadPhotosPanel = function(feed) {
   console.log("loading")
   $.each(feed, function( index, value ) {
     start_img_div = "<div class='pure-u-1 pure-u-md-15-24 instagram_img'>"
-    img_string = "<img src='" + value.images.standard_resolution.url + "'/>";
+    img_string = "<img src='" + value.images.standard_resolution.url + "' class='pure_img'/>";
     end_img_div = "</div>"
     date_formated = value.created_time
     value.location.name == undefined ? location_string = "" : location_string = "<i class='fa fa-map-marker'></i> " + value.location.name
