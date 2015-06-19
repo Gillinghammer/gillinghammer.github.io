@@ -180,8 +180,12 @@ transition: 1s;
 // media query hacks
 @media screen and (max-width: 1023px) {
   #photos {
-    img {
-      max-width: 360px;
+    .instagram {
+      .item {
+        img {
+          max-width: 360px;
+        }
+      }
     }
   }
   #home {
