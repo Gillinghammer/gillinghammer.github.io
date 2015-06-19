@@ -179,6 +179,11 @@ transition: 1s;
 
 // media query hacks
 @media screen and (max-width: 1023px) {
+  #photos {
+    img {
+      max-width: 360px;
+    }
+  }
   #home {
     h1 {
       font-size: 2.5em;
