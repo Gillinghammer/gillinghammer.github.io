@@ -178,6 +178,9 @@ transition: 1s;
   }
   article {
     line-height: 2em;
+    img {
+      max-width: 100%;
+    }
     p {
       font-size: 1.25em;
     }
