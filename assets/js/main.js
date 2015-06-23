@@ -20,33 +20,46 @@ $(document).ready(function() {
 updateRoute = function() {
   var url_hash = document.location.hash;
   switch(url_hash) {
+      case "#updates":
+          closeHomePanel();
+          closePhotosPanel();
+          closeReferralPanel();
+          loadUpdatesPanel();
+          break;
       case "#referrals":
           closeHomePanel();
           closePhotosPanel();
+          closeUpdatesPanel();
           loadReferralPanel();
           break;
       case "":
           closeReferralPanel();
           closePhotosPanel();
+          closeUpdatesPanel();
           loadHomePanel();
           break;
       case "#photos":
           closeReferralPanel();
           closeHomePanel();
+          closeUpdatesPanel();
           loadInstafeed();
           break;
       default:
           closeHomePanel();
           closePhotosPanel();
+          closeUpdatesPanel();
           loadReferralPanel();
   }
 }
+
+loadUpdatesPanel = function() {$('#updates').removeClass("hidden")}
 
 loadReferralPanel = function() {$('#referrals').removeClass("hidden")}
 closeReferralPanel = function() {$('#referrals').addClass("hidden")}
 
 loadHomePanel = function() {$('#home').removeClass("hidden")}
 closeHomePanel = function() {$('#home').addClass("hidden")}
+closeUpdatesPanel = function() {$('#updates').addClass("hidden")}
 
 loadPhotosPanel = function(feed) {
   $('#photos').removeClass("hidden");
