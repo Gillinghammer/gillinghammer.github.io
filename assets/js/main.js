@@ -99,7 +99,7 @@ loadInstafeed = function() {
 }
 
 loadClipboard = function() {
-  var client = new ZeroClipboard( $("img") );
+  var client = new ZeroClipboard( $(".icon") );
   client.on( "copy", function (event) {
     sendToClipboard(event);
   });
