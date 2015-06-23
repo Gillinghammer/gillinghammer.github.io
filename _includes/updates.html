@@ -1,0 +1,8 @@
+{% for post in site.posts limit:100 %}
+    <div class="update pure-u-1">
+      <span class="title">{{ post.title }}</span> <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <article>
+        {{ post.content }}
+      </article>
+    </div>
+{% endfor %}
