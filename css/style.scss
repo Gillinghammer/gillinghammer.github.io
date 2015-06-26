@@ -5,34 +5,24 @@
 $main-green: rgba(40,219,161,1);
 $sub-green: rgba(40,219,161,0.5);
 $light-grey: rgba(0,0,0,0.25);
+$dark-grey: #303036;
 $off-white: #FFFAFF;
 
 * {
   font-family: Rajdhani;
 }
 
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: $off-white;
-  color: #303036;
-  a {
-    color: $main-green;
-    text-decoration: none;
-    border-bottom: 1px dotted $sub-green;
-    transition: 0.5s;
-    &:visited {
-      transition: 0.5s;
-      color: $main-green;
-    }
-    &:hover {
-      transition: 0.5s;
-      color: #00A896
-    }
-    &:active {
-      transition: 0.5s;
-      color: #02C39A
-    }
-  }
+  background-color: $dark-grey;
+  color: $dark-grey;
   #alertbar {
+    z-index: 99;
     position: fixed;
     width: 100%;
     height: 40px;
@@ -57,20 +47,39 @@ body {
 }
 
 .circle-img {
-border-radius: 150%;
-border: 5px solid #ddd;
-transition: 1s;
-&.darken {
+  border-radius: 150%;
+  border: 5px solid #ddd;
   transition: 1s;
-  border-color: $main-green;
-}
-&.avatar {
-  border-color: $light-grey;
-  cursor: pointer;
-}
+  &.darken {
+    transition: 1s;
+    border-color: $main-green;
+  }
+  &.avatar {
+    border-color: $light-grey;
+    cursor: pointer;
+  }
 }
 
 #panel {
+  background-color: $off-white;
+  a {
+    color: $main-green;
+    text-decoration: none;
+    border-bottom: 1px dotted $sub-green;
+    transition: 0.5s;
+    &:visited {
+      transition: 0.5s;
+      color: $main-green;
+    }
+    &:hover {
+      transition: 0.5s;
+      color: #00A896
+    }
+    &:active {
+      transition: 0.5s;
+      color: #02C39A
+    }
+  }
   div.referral {
     min-height: 400px;
     transition: 0.5s;
@@ -90,57 +99,6 @@ transition: 1s;
       cursor: pointer;
     }
   }
-}
-
-.profile {
-  background-color: #303036;
-  border-right: 10px solid $light-grey;
-  #profile {
-    min-height: 100%;
-    padding: 2.8em 0;
-    h1 {
-      font-weight: 700;
-      color: $main-green;
-    }
-    #avatar {
-      max-width: 110px;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.75em;
-      padding: 0 2em;
-      color: $off-white;
-    }
-    i {
-      color: $main-green;
-    }
-    .links {
-      ul, li {
-        padding: 0;
-        margin: 0;
-      }
-      ul {
-        padding-top: 1.25em;
-      }
-      li {
-        padding: 1em 0;
-        font-size: 1.25em;
-        font-weight: 300;
-        a {
-          color: $off-white;
-          border: none;
-          &:hover {
-            color: $main-green;
-          }
-        }
-      }
-    }
-  }
-}
-.pure-g > div {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
 }
 
 #home {
@@ -211,6 +169,106 @@ transition: 1s;
   }
 }
 
+#profile {
+  background-color: $dark-grey;
+  .menu, .extra-mobile, .pages-mobile { 
+    display: none;
+  }
+  .menu {
+    li {
+      a {
+        background-color: $main-green;
+        text-align: center;
+        color: $dark-grey;
+        font-size: 2em;
+        line-height: 2.25em;
+        cursor: pointer;
+        &:hover {
+          background-color: $sub-green;
+          border: none;
+        }
+      }
+    }
+  }
+  &.collapsed {
+    padding: 0;
+    margin: 0;
+    border:0;
+    #avatar {
+      padding: 0;
+      img {
+        border-radius: 0;
+        border: none;
+        
+      }
+    }
+    h1 {
+      font-weight: 300;
+      font-size: 1.25em;
+    }
+    span, .background, .theend, .extra-mobile, .pages-mobile {
+      display: none;
+    }
+    ul {
+      padding: 1.5em 0 0 0;
+      margin: 0;
+      li {
+        a {
+          transition: 1s;
+          color: $main-green;
+          text-decoration: none;
+          display: block;
+          line-height: 4em;
+          font-size: 1em;
+          border-bottom: 1px solid $main-green;
+          &:hover {
+            transition: 1s;
+            color: $sub-green;
+            border-right: 2em solid $main-green;
+          }
+        }
+      }
+    }
+  }
+  #avatar {
+    padding-top: 1em;
+    max-width: 110px;
+  }
+  h1 {
+    font-weight: 700;
+    color: $main-green;
+  }
+  .background {
+    font-weight: 300;
+    color: white;
+    padding: 0 1.5em;
+    line-height: 1.75em;
+  }
+  ul {
+    padding: 3em 0 0 0;
+    margin: 0;
+    li {
+      a {
+        transition: 1s;
+        color: $main-green;
+        text-decoration: none;
+        display: block;
+        line-height: 4em;
+        font-size: 1.25em;
+        border-bottom: 1px solid $main-green;
+        &:hover {
+          transition: 1s;
+          color: $sub-green;
+          border-right: 2em solid $main-green;
+        }
+      }
+    }
+  }
+  p {
+    color: white;
+  }
+}
+
 // media query hacks
 @media screen and (max-width: 1023px) {
   #photos {
@@ -221,41 +279,48 @@ transition: 1s;
     }
     .instagram_img {
       text-align: center;
-     img {
+      img {
        max-width: 360px;
      }
+   }
+ }
+
+ #home {
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+
+#panel {
+  div.referral {
+    min-height: 275px;
+    padding: 1em 2em 0em 2em;
+  }
+}
+#profile {
+  .menu {
+    display: block;
+    background-color: $main-green;
+    text-align: center;
+    color: $dark-grey;
+    font-size: 2em;
+    line-height: 2.25em;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transition: 0.5s;
+      background-color: $sub-green;
+      border: none;
     }
   }
-  #home {
-    h1 {
-      font-size: 2.5em;
-    }
-    p {
-      font-size: 1.5em;
-    }
+  .pages-mobile, .extra-mobile {
+    padding: 0;
   }
-  #panel {
-    div.referral {
-      min-height: 275px;
-      padding: 1em 2em 0em 2em;
-    }
+  .extra, .pages, {
+    display: none;
   }
-    .profile {
-        border-right: none;
-        border-bottom: 10px solid rgba(0,0,0,0.25);
-    }
-    .links {
-      a, li {
-        display: inline;
-      }
-      a {
-        font-size: 0.8em;
-        font-weight: 300;
-      }
-      .iconlinks {
-        a {
-          padding-right: 1em;
-        }
-      }
-    }
+}
 }

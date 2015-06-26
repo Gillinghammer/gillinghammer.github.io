@@ -1,24 +1,74 @@
 $(document).ready(function() {
   // toggles referral code animation
   $('.referral img').hover(function(e) {toggleReferralState(e)});
+  var menu = "closed";
+  $( window ).resize(function() {
+    closeMenu();
+    menu = "closed"
+  });
+  
+  $(".menu").click(function(e) {
+    switch(menu) {
+      case "closed":
+      openMenu();
+      menu = "open"
+      break;
+      case "open":
+      closeMenu();
+      menu = "closed"
+      break;
+    }
+  });
 
+  $("a.links.aboutme").click(function(e) {
+    e.preventDefault();
+    expandProfile();
+  });
   // navigate to referral panel
   $('a.links').click(function(e) {
     e.preventDefault();
+    $('.active').removeClass('active');
+    $target = $(e.target);
+    $target.addClass('active');
     document.location.hash = e.currentTarget.getAttribute("data-name");
   });
-
   // clipboard functionalty
   loadClipboard();
-
   // watching url hash for changes and routes accordingly
   window.onhashchange = function(){
     updateRoute();
   }
 });
 
+collapseProfile = function() {
+  $('.profile-section').removeClass('pure-u-lg-6-24')
+  $('#profile').addClass('collapsed')
+  $('#panel').removeClass("pure-u-lg-18-24")
+  $('.profile-section').addClass('pure-u-lg-2-24')
+  $('#panel').addClass("pure-u-lg-22-24")
+}
+expandProfile = function() {
+  $('.profile-section').removeClass('pure-u-lg-2-24')
+  $('#profile').removeClass('collapsed')
+  $('.aboutme').addClass('hidden');
+  $('#panel').removeClass("pure-u-lg-22-24")
+  $('#panel').addClass("pure-u-lg-18-24")
+  $('.profile-section').addClass('pure-u-lg-6-24')
+}
+
+closeMenu = function() {
+  $('.pages-mobile').slideUp( "fast" );
+  $('.extra-mobile').slideUp( "fast" );
+}
+
+openMenu = function() {
+  $('.pages-mobile').slideDown( "fast" );
+  $('.extra-mobile').slideDown( "fast" );
+}
+
 updateRoute = function() {
   var url_hash = document.location.hash;
+  collapseProfile();
   switch(url_hash) {
       case "#updates":
           closeHomePanel();
@@ -50,6 +100,8 @@ updateRoute = function() {
           closeUpdatesPanel();
           loadReferralPanel();
   }
+  closeMenu();
+  menu = "closed"
 }
 
 loadUpdatesPanel = function() {$('#updates').removeClass("hidden")}
@@ -92,7 +144,7 @@ loadInstafeed = function() {
     userId: 1988146
   });
   $('.instagram').on('didLoadInstagram', function(event, response) {
-      console.log("instgram authenticated", response.data)
+      // console.log("instgram authenticated", response.data)
       feed = response.data;
       loadPhotosPanel(feed);
   });
