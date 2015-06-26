@@ -23,7 +23,7 @@ $(document).ready(function() {
     expandProfile();
   });
   // navigate to referral panel
-  $('a.links').click(function(e) {
+  $('ul.pages a.links, ul.pages-mobile a.links').click(function(e) {
     e.preventDefault();
     $('.isActive').removeClass('isActive');
     $target = $(e.target);

@@ -335,6 +335,9 @@ body {
   ul.extra-mobile {
     li {
       background-color: $sub-green;
+      a {
+        color: $off-white;
+      }
     }
   }
   .extra, .pages, {
