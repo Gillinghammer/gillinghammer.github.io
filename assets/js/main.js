@@ -1,21 +1,19 @@
 $(document).ready(function() {
   // toggles referral code animation
   $('.referral img').hover(function(e) {toggleReferralState(e)});
-  var menu = "closed";
+
   $( window ).resize(function() {
     closeMenu();
-    menu = "closed"
   });
   
   $(".menu").click(function(e) {
-    switch(menu) {
+    menuStatus = e.currentTarget.getAttribute('data-menu')
+    switch(menuStatus) {
       case "closed":
       openMenu();
-      menu = "open"
       break;
       case "open":
       closeMenu();
-      menu = "closed"
       break;
     }
   });
@@ -27,9 +25,9 @@ $(document).ready(function() {
   // navigate to referral panel
   $('a.links').click(function(e) {
     e.preventDefault();
-    $('.active').removeClass('active');
+    $('.isActive').removeClass('isActive');
     $target = $(e.target);
-    $target.addClass('active');
+    $target.addClass('isActive');
     document.location.hash = e.currentTarget.getAttribute("data-name");
   });
   // clipboard functionalty
@@ -59,11 +57,17 @@ expandProfile = function() {
 closeMenu = function() {
   $('.pages-mobile').slideUp( "fast" );
   $('.extra-mobile').slideUp( "fast" );
+  $('.menu').attr('data-menu', 'closed');
+  $('.menu i').addClass('fa-chevron-down');
+  $('.menu i').removeClass('fa-chevron-up');
 }
 
 openMenu = function() {
   $('.pages-mobile').slideDown( "fast" );
   $('.extra-mobile').slideDown( "fast" );
+  $('.menu').attr('data-menu', 'open');
+  $('.menu i').removeClass('fa-chevron-down');
+  $('.menu i').addClass('fa-chevron-up');
 }
 
 updateRoute = function() {
@@ -101,7 +105,6 @@ updateRoute = function() {
           loadReferralPanel();
   }
   closeMenu();
-  menu = "closed"
 }
 
 loadUpdatesPanel = function() {$('#updates').removeClass("hidden")}

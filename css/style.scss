@@ -226,6 +226,10 @@ body {
             color: $sub-green;
             border-right: 2em solid $main-green;
           }
+          &.isActive {
+            background-color: $sub-green;
+            color: $dark-grey;
+          }
         }
       }
     }
@@ -316,8 +320,22 @@ body {
       border: none;
     }
   }
-  .pages-mobile, .extra-mobile {
+  ul.pages-mobile, ul.extra-mobile {
     padding: 0;
+    li {
+      a {
+        &:hover {
+          transition: 1s;
+          background-color: $sub-green;
+          border-right: none;
+        }
+      }
+    }
+  }
+  ul.extra-mobile {
+    li {
+      background-color: $sub-green;
+    }
   }
   .extra, .pages, {
     display: none;
