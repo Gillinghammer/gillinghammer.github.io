@@ -12,6 +12,10 @@ $off-white: #FFFAFF;
   font-family: Rajdhani;
 }
 
+#avatar {
+  max-width: 150px;
+}
+
 .pure-g > div {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -170,9 +174,6 @@ body {
 }
 
 #profile {
-  #avatar {
-   max-width: 150px;
- }
   background-color: $dark-grey;
   ul.extra {
     padding: 0;
