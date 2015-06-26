@@ -171,6 +171,12 @@ body {
 
 #profile {
   background-color: $dark-grey;
+  ul.extra {
+    padding: 0;
+    li a {
+      color: white;
+    }
+  }
   .menu, .extra-mobile, .pages-mobile { 
     display: none;
   }
