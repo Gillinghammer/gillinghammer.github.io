@@ -173,6 +173,17 @@ body {
   }
 }
 
+#referrals {
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 0 3em;
+  }
+}
+
 #profile {
   background-color: $dark-grey;
   ul.extra {
