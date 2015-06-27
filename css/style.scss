@@ -225,8 +225,9 @@ body {
     border:0;
     #avatar {
       padding: 0;
+      max-width:100%;
+      width: 150px;
       img {
-        width:100%;
         border-radius: 0;
         border: none; 
       }
@@ -249,8 +250,7 @@ body {
         }
         &.isActive {
           &:hover {
-            color: $dark-grey;
-          // background-color: blue;
+          color: $dark-grey;
           border-right: none;
         }
       }
@@ -291,7 +291,6 @@ ul {
   margin: 0;
   li {
     a {
-      transition: 1s;
       color: $main-green;
       text-decoration: none;
       display: block;
