@@ -119,7 +119,8 @@ closeUpdatesPanel = function() {$('#updates').addClass("hidden")}
 
 loadPhotosPanel = function(feed) {
   $('#photos').removeClass("hidden");
-  console.log("loading")
+    var photo_content = "";
+    var photos_headline = '<div class="pure-u-1 center-me"><h1>My personal instagram stream, <a href="http://instagram.com/gillinghammer/" target="_blank">follow&nbsp;me!</a></h1></div>';
   $.each(feed, function( index, value ) {
     var instagram_url = value.images.standard_resolution.url
     var created_time = value.created_time
@@ -130,9 +131,9 @@ loadPhotosPanel = function(feed) {
                         "<img src='" + instagram_url + "' class='pure-img insta-photo'/>" +
                         "<h2>" + geo_location + "</h2>" +
                         "<p class='hidden'>" + caption_text + "</p></div>"
-    
-    $("#photos").append(div_content);
+    photo_content = photo_content + div_content
   });
+  $("#photos").append(photos_headline + photo_content);
 }
 closePhotosPanel = function() {$('#photos').addClass("hidden")}
 
