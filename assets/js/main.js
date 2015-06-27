@@ -120,7 +120,7 @@ closeUpdatesPanel = function() {$('#updates').addClass("hidden")}
 loadPhotosPanel = function(feed) {
   $('#photos').removeClass("hidden");
     var photo_content = "";
-    var photos_headline = '<div class="pure-u-1 center-me"><h1>My personal instagram stream, <a href="http://instagram.com/gillinghammer/" target="_blank">follow&nbsp;me!</a></h1></div>';
+    var photos_headline = '<div class="pure-u-1 center-me"><h1><a href="http://instagram.com/gillinghammer/" target="_blank">Follow&nbsp;me</a> on instagram!</h1></div>';
   $.each(feed, function( index, value ) {
     var instagram_url = value.images.standard_resolution.url
     var created_time = value.created_time
