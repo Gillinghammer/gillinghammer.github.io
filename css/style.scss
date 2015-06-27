@@ -222,7 +222,7 @@ body {
   &.collapsed {
     padding: 0;
     margin: 0;
-    border:0;
+    border: 0;
     #avatar {
       padding: 0;
       max-width:100%;
@@ -239,9 +239,13 @@ body {
     span, .background, .theend, .extra-mobile, .pages-mobile {
       display: none;
     }
+    ul.pages li:first-child {
+      border-top: 1px solid $main-green;
+    }
     ul {
       padding: 0;
       margin: 0;
+      border-right: 1px solid $main-green;
       &.pages li a {
         &:hover {
           transition: 1s;
