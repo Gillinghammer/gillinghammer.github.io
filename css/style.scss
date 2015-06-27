@@ -19,13 +19,21 @@ $off-white: #FFFAFF;
 
 
 .vex.vex-theme-wireframe {
-  padding-top: 100px !important;
+  padding-top: 10px !important;
   .vex-content {
     width: 600px !important;
     background: $dark-grey !important;
     border: none !important;
     img {
       max-width: 100%;
+    }
+    h2 {
+      i {
+        color: $main-green;
+      }
+    }
+    p {
+      color: $sub-green !important;
     }
   }
 }

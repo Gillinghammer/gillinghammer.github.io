@@ -126,10 +126,10 @@ loadPhotosPanel = function(feed) {
     value.location.name == undefined ? location_string = "" : location_string = "<i class='fa fa-map-marker'></i> " + value.location.name
     var geo_location = location_string;
     var caption_text = value.caption.text
-    var div_content = "<div class='pure-u-1 pure-u-sm-12-24 pure-u-md-8-24 pure-u-lg-3-24 instagram_img caption'>" +
+    var div_content = "<div class='pure-u-1 pure-u-sm-12-24 pure-u-md-8-24 pure-u-lg-6-24 instagram_img caption'>" +
                         "<img src='" + instagram_url + "' class='pure-img insta-photo'/>" +
                         "<h2>" + geo_location + "</h2>" +
-                        "<p>" + caption_text + "</p></div>"
+                        "<p class='hidden'>" + caption_text + "</p></div>"
     
     $("#photos").append(div_content);
   });
