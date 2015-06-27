@@ -36,6 +36,7 @@ $(document).ready(function() {
   window.onhashchange = function(){
     updateRoute();
   }
+
 });
 
 collapseProfile = function() {
@@ -120,17 +121,17 @@ loadPhotosPanel = function(feed) {
   $('#photos').removeClass("hidden");
   console.log("loading")
   $.each(feed, function( index, value ) {
-    start_img_div = "<div class='pure-u-1 pure-u-md-15-24 instagram_img'>"
-    img_string = "<img src='" + value.images.standard_resolution.url + "' class='pure_img'/>";
-    end_img_div = "</div>"
-    date_formated = value.created_time
+    var instagram_url = value.images.standard_resolution.url
+    var created_time = value.created_time
     value.location.name == undefined ? location_string = "" : location_string = "<i class='fa fa-map-marker'></i> " + value.location.name
-    location_formated = "<h2>" + location_string + "</h2>"
-    start_caption_div = "<div class='pure-u-1 pure-u-md-9-24 caption'>"
-    date_string = "<date>" + date_formated + "</date>"
-    caption_string = "<p>" + value.caption.text + "</p>"
-    end_caption_div = "</div>"
-    $("#photos").append(start_caption_div + location_formated + caption_string + end_caption_div + start_img_div + img_string + end_img_div);
+    var geo_location = location_string;
+    var caption_text = value.caption.text
+    var div_content = "<div class='pure-u-1 pure-u-sm-12-24 pure-u-md-8-24 pure-u-lg-3-24 instagram_img caption'>" +
+                        "<img src='" + instagram_url + "' class='pure-img insta-photo'/>" +
+                        "<h2>" + geo_location + "</h2>" +
+                        "<p>" + caption_text + "</p></div>"
+    
+    $("#photos").append(div_content);
   });
 }
 closePhotosPanel = function() {$('#photos').addClass("hidden")}

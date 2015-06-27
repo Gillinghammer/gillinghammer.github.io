@@ -16,6 +16,13 @@ $off-white: #FFFAFF;
   max-width: 150px;
 }
 
+.vex-content {
+  width: 600px !important;
+  img {
+    max-width: 100%;
+  }
+}
+
 .pure-g > div {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -153,15 +160,17 @@ body {
 }
 
 #photos {
-  padding: 2em 0;
-  .instagram_img {
-    padding: 1em 0 1.5em 0;
+  padding: 3em 0;
+  img {
+    padding: 2em 0 1.5em 0;
   }
   h2 {
-    text-align: right;
+    text-align: left;
+    font-size: 1em;
   }
   p {
-    font-size: 1.5em;
+    font-size: 1em;
+    text-align: left;
     line-height: 2em;
   }
   i {
@@ -323,16 +332,17 @@ p {
 // media query hacks
 @media screen and (max-width: 1023px) {
   #photos {
-    p, h2 {
-      text-align: center;
+    h2 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
       max-width: 360px;
       margin: 0 auto;
+      padding-bottom: 2em;
     }
     .instagram_img {
       text-align: center;
-      img {
-       max-width: 360px;
-     }
    }
  }
 
