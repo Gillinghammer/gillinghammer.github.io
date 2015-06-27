@@ -16,10 +16,17 @@ $off-white: #FFFAFF;
   max-width: 150px;
 }
 
-.vex-content {
-  width: 600px !important;
-  img {
-    max-width: 100%;
+
+
+.vex.vex-theme-wireframe {
+  padding-top: 100px !important;
+  .vex-content {
+    width: 600px !important;
+    background: $dark-grey !important;
+    border: none !important;
+    img {
+      max-width: 100%;
+    }
   }
 }
 
