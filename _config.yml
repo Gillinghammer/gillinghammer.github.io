@@ -3,7 +3,7 @@ timezone: America/Los_Angeles
 title: Colin Gillingham
 email: colingillingham@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A collection of thoughts by Colin Gillingham. Focusing on startup ideas, innovation and other cool things learned while traveling.
+  Colin Gillingham, full-stack developer and Silicon Valley veteran with 5 years of experience at Tesla Motors.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://gillinghammer.github.io" # the base hostname & protocol for your site
 twitter_username: Gillinghammer
