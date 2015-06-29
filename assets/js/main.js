@@ -133,7 +133,7 @@ loadPhotosPanel = function(feed) {
                         "<p class='hidden'>" + caption_text + "</p></div>"
     photo_content = photo_content + div_content
   });
-  $("#photos").append(photos_headline + photo_content);
+  $("#photos").html(photos_headline + photo_content);
 }
 closePhotosPanel = function() {$('#photos').addClass("hidden")}
 

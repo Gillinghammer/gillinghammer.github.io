@@ -192,6 +192,7 @@ body {
   padding: 0;
   img {
     padding: 2em 0 0em 0;
+    cursor: pointer;
   }
   h2 {
     text-align: left;
@@ -231,9 +232,19 @@ body {
       color: white;
     }
   }
+  ul.pages {
+    padding-top: 0;
+  }
   ul {
     padding: 0;
     margin: 0;
+    &.pages li a {
+      &:hover {
+        transition: 1s;
+        color: $sub-green;
+        border-right: 2em solid $main-green;
+      }
+    }
   &.extra li a {
     &:hover {
         transition: 1s;
@@ -348,6 +359,9 @@ ul {
 }
 p {
   color: white;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.5em;
 }
 }
 
