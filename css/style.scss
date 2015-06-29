@@ -16,8 +16,6 @@ $off-white: #FFFAFF;
   max-width: 150px;
 }
 
-
-
 .vex.vex-theme-wireframe {
   padding-top: 10px !important;
   .vex-content {
@@ -88,6 +86,7 @@ body {
 
 #panel {
   background-color: $off-white;
+  padding: 2em;
   a {
     color: $main-green;
     text-decoration: none;
@@ -128,11 +127,10 @@ body {
 }
 
 #home {
-  padding: 2em 3em;
   h1 {
-    font-size: 4.5em;
+    font-size: 3.25em;
     span {
-      font-size: 0.35em;
+      font-size: 0.5em;
       font-weight: 300;
       color: $main-green;
     }
@@ -142,22 +140,38 @@ body {
     strong {
       font-weight: 500;
     }
+    &.lead {
+      font-weight: 500;
+      padding-bottom: 1em;
+    }
+  }
+  ul {
+    padding:0;
+    margin: 0;
+    li {
+    padding-bottom: 0.75em;
+    list-style: none;
+    display: block;
+    font-size: 2.25em;
+    a {
+      text-decoration: none;
+    }
+    }
   }
 }
 
 #updates {
-  padding: 2em 4em;
   .title {
-    font-size: 3em;
+    font-size: 2.75em;
     font-weight: 700;
   }
   .date {
     font-size: 1.75em;
     font-weight: 300;
-    padding-left: 0.5em;
+    display: block;
   }
   .update {
-    padding: 2em 0;
+    padding: 3.5em 0 0.5em 0;
     border-bottom: 1px solid $light-grey;
   }
   article {
@@ -175,7 +189,7 @@ body {
 }
 
 #photos {
-  padding: 3em 0;
+  padding: 0;
   img {
     padding: 2em 0 0em 0;
   }
@@ -220,13 +234,6 @@ body {
   ul {
     padding: 0;
     margin: 0;
-    &.pages li a {
-      &:hover {
-        transition: 1s;
-        color: $sub-green;
-        border-right: 2em solid $main-green;
-      }
-    }
   &.extra li a {
     &:hover {
         transition: 1s;
@@ -361,6 +368,13 @@ p {
    }
  }
 
+ #updates {
+   .update {
+     .title {
+       font-size: 2em;
+     }
+   }
+ }
  #home {
   h1 {
     font-size: 2.5em;
@@ -368,12 +382,15 @@ p {
   p {
     font-size: 1.5em;
   }
+  span {
+    display: none;
+  }
 }
 
 #panel {
   div.referral {
     min-height: 275px;
-    padding: 3em 2em 0em 2em;
+    padding: 3em 1em 0em 1em;
   }
 }
 #profile {
