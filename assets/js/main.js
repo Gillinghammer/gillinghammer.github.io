@@ -76,30 +76,35 @@ updateRoute = function() {
   collapseProfile();
   switch(url_hash) {
       case "#updates":
+      mixpanel.track("Visited Updates");
           closeHomePanel();
           closePhotosPanel();
           closeReferralPanel();
           loadUpdatesPanel();
           break;
       case "#referrals":
+      mixpanel.track("Visited Favorite Apps");
           closeHomePanel();
           closePhotosPanel();
           closeUpdatesPanel();
           loadReferralPanel();
           break;
       case "":
+      mixpanel.track("Visited Home");
           closeReferralPanel();
           closePhotosPanel();
           closeUpdatesPanel();
           loadHomePanel();
           break;
       case "#photos":
+      mixpanel.track("Visited Photos");
           closeReferralPanel();
           closeHomePanel();
           closeUpdatesPanel();
           loadInstafeed();
           break;
       default:
+      mixpanel.track("Visited Home");
           closeHomePanel();
           closePhotosPanel();
           closeUpdatesPanel();
@@ -166,6 +171,7 @@ sendToClipboard = function(event) {
   var clipboard = event.clipboardData;
   var code = event.target.parentNode.childNodes[5].getAttribute('data-code')
   clipboard.setData( "text/plain", event.target.parentNode.childNodes[5].getAttribute('data-code') );
+  mixpanel.track("Copied Referral Code");
   $('#alertbar').removeClass("fadeOutUp");
   $('#alertbar').removeClass("invisible");
   $('#alertbar').addClass("fadeInDown");
