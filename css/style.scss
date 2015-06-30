@@ -45,6 +45,9 @@ $off-white: #FFFAFF;
 body {
   background-color: $dark-grey;
   color: $dark-grey;
+  .invisible {
+    visibility: hidden;
+  }
   #alertbar {
     z-index: 99;
     position: fixed;
@@ -58,9 +61,6 @@ body {
       text-align: center;
       color: $off-white;
       font-size: 1.25em;
-    }
-    &.invisible {
-      visibility: hidden;
     }
   }
 }
@@ -129,20 +129,45 @@ body {
 #home {
   h1 {
     font-size: 3.25em;
+    padding:0;
+    margin:0;
     span {
       font-size: 0.5em;
       font-weight: 300;
       color: $main-green;
     }
   }
+  h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 1.5em;
+    span.readLink, span.hideLink {
+      cursor: pointer;
+      // border-bottom: 1px dashed $main-green;
+      margin-left: 1em;
+      font-size: 0.75em;
+      font-weight: 300;
+      color: $main-green;
+      transition: 1s;
+      &:hover {
+        transition: 1s;
+        color: $sub-green;
+        // border-bottom: 1px dashed $off-white;
+      }
+    }
+  }
   p {
-    font-size: 2.5em;
+    padding: 0.5em 0;
+    margin:0;
+    font-size: 1.25em;
+    line-height: 1.5em;
     strong {
       font-weight: 500;
     }
     &.lead {
       font-weight: 500;
-      padding-bottom: 1em;
+      padding-bottom: 0.5em;
+      padding-top: 0;
     }
   }
   ul {

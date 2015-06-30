@@ -1,0 +1,26 @@
+---
+---
+
+$main-green: rgba(40,219,161,1);
+$sub-green: rgba(40,219,161,0.5);
+$light-grey: rgba(0,0,0,0.25);
+$dark-grey: #303036;
+$off-white: #FFFAFF;
+
+.blogpost {
+  h1.post-title {
+    padding:1em 0 0.25em 0;
+    margin:0;
+    font-size: 2.5em;
+  }
+  span.post-meta {
+    color: $main-green;
+    font-size: 1.5em;
+  }
+  article.post-content {
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+    }
+  }
+}

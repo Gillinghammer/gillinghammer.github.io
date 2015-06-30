@@ -12,7 +12,7 @@ $(document).ready(function() {
     vex.open({
       content: div_content
     });
-    mixpanel.track("Instgram Photo Clicked");
+    mixpanel.track("Instgram Photo Clicked", {"img_src": img_src});
   });
   
 });

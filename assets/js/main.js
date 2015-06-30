@@ -171,7 +171,7 @@ sendToClipboard = function(event) {
   var clipboard = event.clipboardData;
   var code = event.target.parentNode.childNodes[5].getAttribute('data-code')
   clipboard.setData( "text/plain", event.target.parentNode.childNodes[5].getAttribute('data-code') );
-  mixpanel.track("Copied Referral Code");
+  mixpanel.track("Copied Referral Code", {"service": event.target.parentNode.childNodes[1].getAttribute('alt')});
   $('#alertbar').removeClass("fadeOutUp");
   $('#alertbar').removeClass("invisible");
   $('#alertbar').addClass("fadeInDown");
