@@ -9,11 +9,16 @@ $light-grey: rgba(0,0,0,0.25);
 $dark-grey: #303036;
 $off-white: #FFFAFF;
 
-* {
+h1,h2,h3,h4,h5 {
   font-family: Rajdhani;
-  p {
-    font-family: Roboto;
-    font-weight: 100;
+}
+
+p {
+  font-family: Roboto;
+  font-weight: 100;
+  a {
+    font-family: inherit;
+    font-weight: 400;
   }
 }
 
@@ -40,51 +45,6 @@ div.vex {
     }
   }
 }
-
-// .vex.vex-theme-wireframe {
-//   padding-top: 10px !important;
-//   .vex-content {
-//     min-width: 600px !important;
-//     background: $off-white !important;
-//     border: 1px solid $dark-grey !important;
-//     div.vex-close::before {
-//       content:"x" !important;
-//       font-size: 1.5em;
-//       color: $off-white;
-//     }
-//     div.photoBox {
-//       img {
-//         max-width: 100%;
-//       }
-//       h2 {
-//         i {
-//           color: $main-green;
-//         }
-//       }
-//       p {
-//         color: $dark-grey !important;
-//       }
-//     }
-
-//     div.blogpost {
-//       h1.post-title {
-//         padding: 0.5em 0;
-//         margin:0;
-//         font-size: 2.5em;
-//       }
-//       span.post-meta {
-//         color: $main-green;
-//         font-size: 1.5em;
-//       }
-//       article.post-content {
-//         p {
-//           font-size: 1em;
-//           line-height: 1.5em;
-//         }
-//       }
-//     }
-//   }
-// }
 
 .pure-g > div {
   -webkit-box-sizing: border-box;
@@ -142,6 +102,7 @@ body {
     text-decoration: none;
     border-bottom: 1px dotted $sub-green;
     transition: 0.5s;
+    font-weight: 300;
     &:visited {
       transition: 0.5s;
       color: $main-green;
