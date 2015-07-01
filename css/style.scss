@@ -299,6 +299,11 @@ body {
 
 #profile {
   background-color: $dark-grey;
+  .background {
+    p {
+      font-weight: 100;
+    }
+  }
   ul.extra {
     padding: 0;
     li a {
